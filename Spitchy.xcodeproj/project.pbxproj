@@ -14,6 +14,7 @@
 		7A7AC8421CFDD4CF006F5E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7AC8401CFDD4CF006F5E4C /* LaunchScreen.storyboard */; };
 		7A7AC84D1CFDD4CF006F5E4C /* spitchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC84C1CFDD4CF006F5E4C /* spitchyTests.swift */; };
 		7A7AC8581CFDD4CF006F5E4C /* spitchyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC8571CFDD4CF006F5E4C /* spitchyUITests.swift */; };
+		7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD33BB71CFDE332004258CE /* BridgeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +35,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7A7AC8341CFDD4CE006F5E4C /* spitchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spitchy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7AC8341CFDD4CE006F5E4C /* Spitchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spitchy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7AC8371CFDD4CF006F5E4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A7AC8391CFDD4CF006F5E4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A7AC83C1CFDD4CF006F5E4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A7AC83E1CFDD4CF006F5E4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A7AC8411CFDD4CF006F5E4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A7AC8431CFDD4CF006F5E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A7AC8481CFDD4CF006F5E4C /* spitchyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spitchyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7AC8481CFDD4CF006F5E4C /* Spitchy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spitchy.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7AC84C1CFDD4CF006F5E4C /* spitchyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spitchyTests.swift; sourceTree = "<group>"; };
 		7A7AC84E1CFDD4CF006F5E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A7AC8531CFDD4CF006F5E4C /* spitchyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spitchyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7AC8531CFDD4CF006F5E4C /* Spitchy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spitchy.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7AC8571CFDD4CF006F5E4C /* spitchyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spitchyUITests.swift; sourceTree = "<group>"; };
 		7A7AC8591CFDD4CF006F5E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD33BB71CFDE332004258CE /* BridgeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +89,9 @@
 		7A7AC8351CFDD4CE006F5E4C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A7AC8341CFDD4CE006F5E4C /* spitchy.app */,
-				7A7AC8481CFDD4CF006F5E4C /* spitchyTests.xctest */,
-				7A7AC8531CFDD4CF006F5E4C /* spitchyUITests.xctest */,
+				7A7AC8341CFDD4CE006F5E4C /* Spitchy.app */,
+				7A7AC8481CFDD4CF006F5E4C /* Spitchy.xctest */,
+				7A7AC8531CFDD4CF006F5E4C /* Spitchy.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +101,7 @@
 			children = (
 				7A7AC8371CFDD4CF006F5E4C /* AppDelegate.swift */,
 				7A7AC8391CFDD4CF006F5E4C /* ViewController.swift */,
+				7AD33BB61CFDE320004258CE /* Controllers */,
 				7A7AC83B1CFDD4CF006F5E4C /* Main.storyboard */,
 				7A7AC83E1CFDD4CF006F5E4C /* Assets.xcassets */,
 				7A7AC8401CFDD4CF006F5E4C /* LaunchScreen.storyboard */,
@@ -125,12 +128,20 @@
 			path = spitchyUITests;
 			sourceTree = "<group>";
 		};
+		7AD33BB61CFDE320004258CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AD33BB71CFDE332004258CE /* BridgeController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7A7AC8331CFDD4CE006F5E4C /* spitchy */ = {
+		7A7AC8331CFDD4CE006F5E4C /* Spitchy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A7AC85C1CFDD4CF006F5E4C /* Build configuration list for PBXNativeTarget "spitchy" */;
+			buildConfigurationList = 7A7AC85C1CFDD4CF006F5E4C /* Build configuration list for PBXNativeTarget "Spitchy" */;
 			buildPhases = (
 				7A7AC8301CFDD4CE006F5E4C /* Sources */,
 				7A7AC8311CFDD4CE006F5E4C /* Frameworks */,
@@ -140,9 +151,9 @@
 			);
 			dependencies = (
 			);
-			name = spitchy;
+			name = Spitchy;
 			productName = spitchy;
-			productReference = 7A7AC8341CFDD4CE006F5E4C /* spitchy.app */;
+			productReference = 7A7AC8341CFDD4CE006F5E4C /* Spitchy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7A7AC8471CFDD4CF006F5E4C /* spitchyTests */ = {
@@ -160,7 +171,7 @@
 			);
 			name = spitchyTests;
 			productName = spitchyTests;
-			productReference = 7A7AC8481CFDD4CF006F5E4C /* spitchyTests.xctest */;
+			productReference = 7A7AC8481CFDD4CF006F5E4C /* Spitchy.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		7A7AC8521CFDD4CF006F5E4C /* spitchyUITests */ = {
@@ -178,7 +189,7 @@
 			);
 			name = spitchyUITests;
 			productName = spitchyUITests;
-			productReference = 7A7AC8531CFDD4CF006F5E4C /* spitchyUITests.xctest */;
+			productReference = 7A7AC8531CFDD4CF006F5E4C /* Spitchy.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +215,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7A7AC82F1CFDD4CE006F5E4C /* Build configuration list for PBXProject "spitchy" */;
+			buildConfigurationList = 7A7AC82F1CFDD4CE006F5E4C /* Build configuration list for PBXProject "Spitchy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,7 +228,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7A7AC8331CFDD4CE006F5E4C /* spitchy */,
+				7A7AC8331CFDD4CE006F5E4C /* Spitchy */,
 				7A7AC8471CFDD4CF006F5E4C /* spitchyTests */,
 				7A7AC8521CFDD4CF006F5E4C /* spitchyUITests */,
 			);
@@ -258,6 +269,7 @@
 			files = (
 				7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */,
 				7A7AC8381CFDD4CF006F5E4C /* AppDelegate.swift in Sources */,
+				7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +294,12 @@
 /* Begin PBXTargetDependency section */
 		7A7AC84A1CFDD4CF006F5E4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7A7AC8331CFDD4CE006F5E4C /* spitchy */;
+			target = 7A7AC8331CFDD4CE006F5E4C /* Spitchy */;
 			targetProxy = 7A7AC8491CFDD4CF006F5E4C /* PBXContainerItemProxy */;
 		};
 		7A7AC8551CFDD4CF006F5E4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7A7AC8331CFDD4CE006F5E4C /* spitchy */;
+			target = 7A7AC8331CFDD4CE006F5E4C /* Spitchy */;
 			targetProxy = 7A7AC8541CFDD4CF006F5E4C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -402,7 +414,7 @@
 				INFOPLIST_FILE = spitchy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spitchy.spitchy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spitchy;
 			};
 			name = Debug;
 		};
@@ -413,7 +425,7 @@
 				INFOPLIST_FILE = spitchy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spitchy.spitchy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spitchy;
 			};
 			name = Release;
 		};
@@ -424,8 +436,8 @@
 				INFOPLIST_FILE = spitchyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spitchy.spitchyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/spitchy.app/spitchy";
+				PRODUCT_NAME = Spitchy;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spitchy.app/Spitchy";
 			};
 			name = Debug;
 		};
@@ -436,8 +448,8 @@
 				INFOPLIST_FILE = spitchyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spitchy.spitchyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/spitchy.app/spitchy";
+				PRODUCT_NAME = Spitchy;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spitchy.app/Spitchy";
 			};
 			name = Release;
 		};
@@ -447,7 +459,7 @@
 				INFOPLIST_FILE = spitchyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spitchy.spitchyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spitchy;
 				TEST_TARGET_NAME = spitchy;
 			};
 			name = Debug;
@@ -458,7 +470,7 @@
 				INFOPLIST_FILE = spitchyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = spitchy.spitchyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Spitchy;
 				TEST_TARGET_NAME = spitchy;
 			};
 			name = Release;
@@ -466,7 +478,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7A7AC82F1CFDD4CE006F5E4C /* Build configuration list for PBXProject "spitchy" */ = {
+		7A7AC82F1CFDD4CE006F5E4C /* Build configuration list for PBXProject "Spitchy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A7AC85A1CFDD4CF006F5E4C /* Debug */,
@@ -475,13 +487,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A7AC85C1CFDD4CF006F5E4C /* Build configuration list for PBXNativeTarget "spitchy" */ = {
+		7A7AC85C1CFDD4CF006F5E4C /* Build configuration list for PBXNativeTarget "Spitchy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A7AC85D1CFDD4CF006F5E4C /* Debug */,
 				7A7AC85E1CFDD4CF006F5E4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A7AC85F1CFDD4CF006F5E4C /* Build configuration list for PBXNativeTarget "spitchyTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +503,7 @@
 				7A7AC8611CFDD4CF006F5E4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A7AC8621CFDD4CF006F5E4C /* Build configuration list for PBXNativeTarget "spitchyUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +512,7 @@
 				7A7AC8641CFDD4CF006F5E4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

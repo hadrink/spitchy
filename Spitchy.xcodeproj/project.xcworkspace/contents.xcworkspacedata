@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:spitchy.xcodeproj">
+      location = "self:/Users/Romain/Google Drive/Live project/project/spitchy/Spitchy.xcodeproj">
    </FileRef>
 </Workspace>

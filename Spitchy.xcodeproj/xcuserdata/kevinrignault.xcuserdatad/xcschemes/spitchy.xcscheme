@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7A7AC8331CFDD4CE006F5E4C"
-               BuildableName = "spitchy.app"
+               BuildableName = "Spitchy.temp_caseinsensitive_rename.app"
                BlueprintName = "spitchy"
                ReferencedContainer = "container:spitchy.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7A7AC8471CFDD4CF006F5E4C"
-               BuildableName = "spitchyTests.xctest"
+               BuildableName = "Spitchy.temp_caseinsensitive_rename.xctest"
                BlueprintName = "spitchyTests"
                ReferencedContainer = "container:spitchy.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7A7AC8521CFDD4CF006F5E4C"
-               BuildableName = "spitchyUITests.xctest"
+               BuildableName = "Spitchy.temp_caseinsensitive_rename.xctest"
                BlueprintName = "spitchyUITests"
                ReferencedContainer = "container:spitchy.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A7AC8331CFDD4CE006F5E4C"
-            BuildableName = "spitchy.app"
+            BuildableName = "Spitchy.temp_caseinsensitive_rename.app"
             BlueprintName = "spitchy"
             ReferencedContainer = "container:spitchy.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A7AC8331CFDD4CE006F5E4C"
-            BuildableName = "spitchy.app"
+            BuildableName = "Spitchy.temp_caseinsensitive_rename.app"
             BlueprintName = "spitchy"
             ReferencedContainer = "container:spitchy.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A7AC8331CFDD4CE006F5E4C"
-            BuildableName = "spitchy.app"
+            BuildableName = "Spitchy.temp_caseinsensitive_rename.app"
             BlueprintName = "spitchy"
             ReferencedContainer = "container:spitchy.xcodeproj">
          </BuildableReference>
