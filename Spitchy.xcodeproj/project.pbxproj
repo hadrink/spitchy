@@ -14,6 +14,15 @@
 		7A7AC8421CFDD4CF006F5E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7AC8401CFDD4CF006F5E4C /* LaunchScreen.storyboard */; };
 		7A7AC84D1CFDD4CF006F5E4C /* spitchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC84C1CFDD4CF006F5E4C /* spitchyTests.swift */; };
 		7A7AC8581CFDD4CF006F5E4C /* spitchyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC8571CFDD4CF006F5E4C /* spitchyUITests.swift */; };
+		7AA552E61D0065FF002834CE /* BPreplay.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552E21D0065FF002834CE /* BPreplay.otf */; };
+		7AA552E71D0065FF002834CE /* BPreplayBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552E31D0065FF002834CE /* BPreplayBold.otf */; };
+		7AA552E81D0065FF002834CE /* BPreplayBoldItalics.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552E41D0065FF002834CE /* BPreplayBoldItalics.otf */; };
+		7AA552E91D0065FF002834CE /* BPreplayItalics.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552E51D0065FF002834CE /* BPreplayItalics.otf */; };
+		7AA552EC1D00673D002834CE /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552EA1D00673D002834CE /* Lato-BlackItalic.ttf */; };
+		7AA552ED1D00673D002834CE /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552EB1D00673D002834CE /* Lato-Regular.ttf */; };
+		7AA552EF1D00679A002834CE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA552EE1D00679A002834CE /* SignInViewController.swift */; };
+		7AA552F11D006A46002834CE /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA552F01D006A46002834CE /* Design.swift */; };
+		7AA552F31D006C5C002834CE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552F21D006C5C002834CE /* Lato-Bold.ttf */; };
 		7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD33BB71CFDE332004258CE /* BridgeController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +57,15 @@
 		7A7AC8531CFDD4CF006F5E4C /* Spitchy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spitchy.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7AC8571CFDD4CF006F5E4C /* spitchyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spitchyUITests.swift; sourceTree = "<group>"; };
 		7A7AC8591CFDD4CF006F5E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA552E21D0065FF002834CE /* BPreplay.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPreplay.otf; sourceTree = "<group>"; };
+		7AA552E31D0065FF002834CE /* BPreplayBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPreplayBold.otf; sourceTree = "<group>"; };
+		7AA552E41D0065FF002834CE /* BPreplayBoldItalics.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPreplayBoldItalics.otf; sourceTree = "<group>"; };
+		7AA552E51D0065FF002834CE /* BPreplayItalics.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPreplayItalics.otf; sourceTree = "<group>"; };
+		7AA552EA1D00673D002834CE /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7AA552EB1D00673D002834CE /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		7AA552EE1D00679A002834CE /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7AA552F01D006A46002834CE /* Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		7AA552F21D006C5C002834CE /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		7AD33BB71CFDE332004258CE /* BridgeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +119,7 @@
 			children = (
 				7A7AC8371CFDD4CF006F5E4C /* AppDelegate.swift */,
 				7A7AC8391CFDD4CF006F5E4C /* ViewController.swift */,
+				7AA552E11D0065E8002834CE /* Fonts */,
 				7AD33BB61CFDE320004258CE /* Controllers */,
 				7A7AC83B1CFDD4CF006F5E4C /* Main.storyboard */,
 				7A7AC83E1CFDD4CF006F5E4C /* Assets.xcassets */,
@@ -128,10 +147,26 @@
 			path = spitchyUITests;
 			sourceTree = "<group>";
 		};
+		7AA552E11D0065E8002834CE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7AA552F21D006C5C002834CE /* Lato-Bold.ttf */,
+				7AA552E21D0065FF002834CE /* BPreplay.otf */,
+				7AA552E31D0065FF002834CE /* BPreplayBold.otf */,
+				7AA552E41D0065FF002834CE /* BPreplayBoldItalics.otf */,
+				7AA552E51D0065FF002834CE /* BPreplayItalics.otf */,
+				7AA552EA1D00673D002834CE /* Lato-BlackItalic.ttf */,
+				7AA552EB1D00673D002834CE /* Lato-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		7AD33BB61CFDE320004258CE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				7AD33BB71CFDE332004258CE /* BridgeController.swift */,
+				7AA552EE1D00679A002834CE /* SignInViewController.swift */,
+				7AA552F01D006A46002834CE /* Design.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -240,8 +275,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA552EC1D00673D002834CE /* Lato-BlackItalic.ttf in Resources */,
+				7AA552F31D006C5C002834CE /* Lato-Bold.ttf in Resources */,
 				7A7AC8421CFDD4CF006F5E4C /* LaunchScreen.storyboard in Resources */,
+				7AA552E91D0065FF002834CE /* BPreplayItalics.otf in Resources */,
 				7A7AC83F1CFDD4CF006F5E4C /* Assets.xcassets in Resources */,
+				7AA552ED1D00673D002834CE /* Lato-Regular.ttf in Resources */,
+				7AA552E61D0065FF002834CE /* BPreplay.otf in Resources */,
+				7AA552E81D0065FF002834CE /* BPreplayBoldItalics.otf in Resources */,
+				7AA552E71D0065FF002834CE /* BPreplayBold.otf in Resources */,
 				7A7AC83D1CFDD4CF006F5E4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,9 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA552EF1D00679A002834CE /* SignInViewController.swift in Sources */,
 				7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */,
 				7A7AC8381CFDD4CF006F5E4C /* AppDelegate.swift in Sources */,
 				7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */,
+				7AA552F11D006A46002834CE /* Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

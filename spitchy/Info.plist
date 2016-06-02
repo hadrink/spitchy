@@ -36,5 +36,15 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BPReplay.otf</string>
+		<string>BPreplayBold.otf</string>
+		<string>BPreplayBoldItalics.otf</string>
+		<string>BPreplayItalics.otf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-BlackItalic</string>
+		<string>Lato-Bold.ttf</string>
+	</array>
 </dict>
 </plist>
