@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let initialViewController = bridgeController
-        window?.rootViewController = initialViewController
+        //window?.rootViewController = initialViewController
         return true
     }
 
