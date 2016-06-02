@@ -143,6 +143,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="ucR-Hn-b1w" id="UaW-0n-kWV"/>
                         <outlet property="baseline" destination="YnF-2h-qlx" id="X5i-Sa-uCS"/>
                         <outlet property="hashtag" destination="cm6-ey-hx9" id="FPH-4c-SGC"/>
                         <outlet property="logo" destination="0rN-Da-rz9" id="OUh-YN-4jV"/>

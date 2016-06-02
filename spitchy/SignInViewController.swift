@@ -16,16 +16,70 @@ class SignInViewController: UIViewController {
     @IBOutlet var logo: UIImageView!
     @IBOutlet var baseline: UILabel!
     @IBOutlet var hashtag: UILabel!
+    @IBOutlet var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         design()
+        animateImageView()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    let images = [
+        UIImage(named: "topic-economy"),
+        UIImage(named: "topic-politique"),
+        UIImage(named: "topic-sport")
+    ]
+    
+    let hashtags = [
+        "#économie",
+        "#politique",
+        "#sport"
+    ]
+    
+    var index = 0
+    let animationDuration: NSTimeInterval = 0.25
+    let switchingInterval: NSTimeInterval = 4
+    
+    func animateImageView() {
+        CATransaction.begin()
+        
+        CATransaction.setAnimationDuration(animationDuration)
+        CATransaction.setCompletionBlock {
+            let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(self.switchingInterval * NSTimeInterval(NSEC_PER_SEC)))
+            dispatch_after(delay, dispatch_get_main_queue()) {
+                self.animateImageView()
+            }
+        }
+        
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        /*
+         transition.type = kCATransitionPush
+         transition.subtype = kCATransitionFromRight
+         */
+        backgroundImage.layer.addAnimation(transition, forKey: kCATransition)
+        backgroundImage.image = images[index]
+        hashtag.text = hashtags[index]
+        
+        CATransaction.commit()
+        
+        index = index < images.count - 1 ? index + 1 : 0
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        
+        //LightContent
+        return UIStatusBarStyle.LightContent
+        
+        //Default
+        //return UIStatusBarStyle.Default
+        
     }
     
     func design() {
@@ -47,11 +101,11 @@ class SignInViewController: UIViewController {
         signInButton.layer.shadowOpacity = 0.5
         signInButton.layer.shadowRadius = 1.0
         
-        baseline.font = UIFont(name: "Lato-Regular", size: 18)
+        baseline.font = UIFont(name: "Lato-Regular", size: 20)
         baseline.textColor = colors.white
         baseline.text = "Réagis à l'actualité."
         
-        hashtag.font = UIFont(name: "Lato-Regular", size: 18)
+        hashtag.font = UIFont(name: "Lato-Bold", size: 20)
         hashtag.textColor = colors.white
         hashtag.text = "#économie"
     }
