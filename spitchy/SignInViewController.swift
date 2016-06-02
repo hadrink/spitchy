@@ -42,6 +42,10 @@ class SignInViewController: UIViewController {
         signInButton.backgroundColor = colors.green
         signInButton.tintColor = colors.white
         signInButton.layer.cornerRadius = 4.0
+        signInButton.layer.shadowColor = UIColor.blackColor().CGColor
+        signInButton.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        signInButton.layer.shadowOpacity = 0.5
+        signInButton.layer.shadowRadius = 1.0
         
         baseline.font = UIFont(name: "Lato-Regular", size: 18)
         baseline.textColor = colors.white
