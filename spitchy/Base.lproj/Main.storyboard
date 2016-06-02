@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Spitchy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="Spitchy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,26 +18,140 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic-economy" translatesAutoresizingMaskIntoConstraints="NO" id="ucR-Hn-b1w">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymn-oH-YxQ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Sign in"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="177" y="750" width="47" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="MB5-fx-beV"/>
+                                    <constraint firstAttribute="height" constant="50" id="ff3-9Q-PcJ"/>
+                                </constraints>
+                                <state key="normal" title="S'inscrire avec Facebook"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MB5-fx-beV"/>
+                                        <exclude reference="ff3-9Q-PcJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="116" y="690" width="170" height="30"/>
+                                    <mask key="constraints">
+                                        <include reference="MB5-fx-beV"/>
+                                        <include reference="ff3-9Q-PcJ"/>
+                                    </mask>
                                 </variation>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Réagis à l'actualité" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnF-2h-qlx">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="121" y="191" width="142" height="21"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spitchy-login" translatesAutoresizingMaskIntoConstraints="NO" id="0rN-Da-rz9">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="260-k1-gi0"/>
+                                    <constraint firstAttribute="width" constant="210" id="EWO-n8-kKO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="260-k1-gi0"/>
+                                        <exclude reference="EWO-n8-kKO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="87" y="127" width="210" height="56"/>
+                                    <mask key="constraints">
+                                        <include reference="260-k1-gi0"/>
+                                        <include reference="EWO-n8-kKO"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#economie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm6-ey-hx9">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="149" y="220" width="86" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0rN-Da-rz9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="3pK-6D-xqd"/>
+                            <constraint firstItem="cm6-ey-hx9" firstAttribute="top" secondItem="YnF-2h-qlx" secondAttribute="bottom" constant="10" id="6K7-an-wfG"/>
+                            <constraint firstItem="YnF-2h-qlx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A44-DJ-wer"/>
+                            <constraint firstItem="0rN-Da-rz9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="APm-bg-BcG"/>
+                            <constraint firstItem="YnF-2h-qlx" firstAttribute="top" secondItem="0rN-Da-rz9" secondAttribute="bottom" constant="10" id="CW7-9W-jBR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ymn-oH-YxQ" secondAttribute="bottom" constant="80" id="F49-cY-Cmo"/>
+                            <constraint firstItem="ucR-Hn-b1w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="H9Z-13-dYB"/>
+                            <constraint firstItem="cm6-ey-hx9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ThD-a8-rIu"/>
+                            <constraint firstItem="ucR-Hn-b1w" firstAttribute="centerX" secondItem="ymn-oH-YxQ" secondAttribute="centerX" id="Zuv-XC-PZ6"/>
+                            <constraint firstItem="ucR-Hn-b1w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ngf-Fn-7aK"/>
+                            <constraint firstItem="ucR-Hn-b1w" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="wLW-7X-qgg"/>
+                            <constraint firstItem="ymn-oH-YxQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x4Z-en-5aj"/>
+                            <constraint firstAttribute="trailing" secondItem="ucR-Hn-b1w" secondAttribute="trailing" id="ygg-ga-hNi"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="ucR-Hn-b1w"/>
                                 <exclude reference="ymn-oH-YxQ"/>
+                                <exclude reference="YnF-2h-qlx"/>
+                                <exclude reference="0rN-Da-rz9"/>
+                                <exclude reference="cm6-ey-hx9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="H9Z-13-dYB"/>
+                                <exclude reference="Zuv-XC-PZ6"/>
+                                <exclude reference="ngf-Fn-7aK"/>
+                                <exclude reference="wLW-7X-qgg"/>
+                                <exclude reference="ygg-ga-hNi"/>
+                                <exclude reference="3pK-6D-xqd"/>
+                                <exclude reference="APm-bg-BcG"/>
+                                <exclude reference="A44-DJ-wer"/>
+                                <exclude reference="CW7-9W-jBR"/>
+                                <exclude reference="6K7-an-wfG"/>
+                                <exclude reference="ThD-a8-rIu"/>
+                                <exclude reference="x4Z-en-5aj"/>
+                                <exclude reference="F49-cY-Cmo"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="ucR-Hn-b1w"/>
                                 <include reference="ymn-oH-YxQ"/>
+                                <include reference="YnF-2h-qlx"/>
+                                <include reference="0rN-Da-rz9"/>
+                                <include reference="cm6-ey-hx9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="H9Z-13-dYB"/>
+                                <include reference="Zuv-XC-PZ6"/>
+                                <include reference="ngf-Fn-7aK"/>
+                                <include reference="wLW-7X-qgg"/>
+                                <include reference="ygg-ga-hNi"/>
+                                <include reference="3pK-6D-xqd"/>
+                                <include reference="APm-bg-BcG"/>
+                                <include reference="A44-DJ-wer"/>
+                                <include reference="CW7-9W-jBR"/>
+                                <include reference="6K7-an-wfG"/>
+                                <include reference="ThD-a8-rIu"/>
+                                <include reference="x4Z-en-5aj"/>
+                                <include reference="F49-cY-Cmo"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="baseline" destination="YnF-2h-qlx" id="X5i-Sa-uCS"/>
+                        <outlet property="hashtag" destination="cm6-ey-hx9" id="FPH-4c-SGC"/>
+                        <outlet property="logo" destination="0rN-Da-rz9" id="OUh-YN-4jV"/>
+                        <outlet property="signInButton" destination="ymn-oH-YxQ" id="8KE-f8-DmZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +364,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fuh-wr-aac" id="VLY-C7-uSd">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+											<rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SkG-i0-f7N">
@@ -710,5 +824,7 @@
     </scenes>
     <resources>
         <image name="spitchy-username" width="76" height="120"/>
+        <image name="spitchy-login" width="210" height="56"/>
+        <image name="topic-economy" width="375" height="667"/>
     </resources>
 </document>
