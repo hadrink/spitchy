@@ -43,6 +43,12 @@ class UsernameViewController: UIViewController, UIGestureRecognizerDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func goAction(sender: UIButton) {
+        let bridgeController = BridgeController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        self.presentViewController(bridgeController, animated: true, completion: nil)
+    }
+    
+    
     func design() {
         
         print("design")
@@ -74,7 +80,7 @@ class UsernameViewController: UIViewController, UIGestureRecognizerDelegate {
         print(keyboardFrame)
 
         UIView.animateWithDuration(0.25, animations: { () -> Void in
-            self.view.frame.origin.y = -keyboardFrame.size.height
+            self.view.frame.origin.y = -self.infosLabel.frame.origin.y * 2 + self.view.frame.height + 20
         })
     }
     

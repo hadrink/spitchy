@@ -172,10 +172,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jrj-sz-WEb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrj-sz-WEb">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="h7w-8v-ZAS"/>
+                                    <constraint firstAttribute="height" constant="100" id="h7w-8v-ZAS">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                    </constraint>
                                 </constraints>
                                 <string key="text">PS : Évite de prendre un pseudo que tu pourrais regretter parce qu’on a pas encore ajouter l’option qui permet de le changer. Et peut être qu’on ne l’ajoutera jamais :)</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,6 +234,9 @@
                                         <include reference="Nwh-GS-aCa"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="goAction:" destination="sTN-CR-k8C" eventType="touchUpInside" id="5bv-42-wYo"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dernière étape" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqU-Dy-5bC">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
