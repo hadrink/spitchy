@@ -23,6 +23,7 @@
 		7AA552EF1D00679A002834CE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA552EE1D00679A002834CE /* SignInViewController.swift */; };
 		7AA552F11D006A46002834CE /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA552F01D006A46002834CE /* Design.swift */; };
 		7AA552F31D006C5C002834CE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552F21D006C5C002834CE /* Lato-Bold.ttf */; };
+		7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */; };
 		7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD33BB71CFDE332004258CE /* BridgeController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		7AA552EE1D00679A002834CE /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7AA552F01D006A46002834CE /* Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		7AA552F21D006C5C002834CE /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		7AD33BB71CFDE332004258CE /* BridgeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD33BB71CFDE332004258CE /* BridgeController.swift */,
+				7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */,
 				7AA552EE1D00679A002834CE /* SignInViewController.swift */,
 				7AA552F01D006A46002834CE /* Design.swift */,
 			);
@@ -313,6 +316,7 @@
 				7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */,
 				7A7AC8381CFDD4CF006F5E4C /* AppDelegate.swift in Sources */,
 				7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */,
+				7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */,
 				7AA552F11D006A46002834CE /* Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
