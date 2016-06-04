@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0FE7251D0224E900A7B2EA /* LivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */; };
 		7A7AC8381CFDD4CF006F5E4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC8371CFDD4CF006F5E4C /* AppDelegate.swift */; };
 		7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC8391CFDD4CF006F5E4C /* ViewController.swift */; };
 		7A7AC83D1CFDD4CF006F5E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7AC83B1CFDD4CF006F5E4C /* Main.storyboard */; };
@@ -14,6 +15,11 @@
 		7A7AC8421CFDD4CF006F5E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7AC8401CFDD4CF006F5E4C /* LaunchScreen.storyboard */; };
 		7A7AC84D1CFDD4CF006F5E4C /* spitchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC84C1CFDD4CF006F5E4C /* spitchyTests.swift */; };
 		7A7AC8581CFDD4CF006F5E4C /* spitchyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC8571CFDD4CF006F5E4C /* spitchyUITests.swift */; };
+		7A85AEA51D02DFC900FACB6C /* SpitchersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85AEA41D02DFC900FACB6C /* SpitchersCollectionCell.swift */; };
+		7A85AEA71D02E5C600FACB6C /* SpitcherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85AEA61D02E5C600FACB6C /* SpitcherModel.swift */; };
+		7A85AEA91D02FBD800FACB6C /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A85AEA81D02FBD800FACB6C /* Lato-BoldItalic.ttf */; };
+		7A85AEAB1D02FCF400FACB6C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A85AEAA1D02FCF400FACB6C /* Lato-Light.ttf */; };
+		7A85AEAD1D02FE1000FACB6C /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85AEAC1D02FE1000FACB6C /* TopicModel.swift */; };
 		7AA552E61D0065FF002834CE /* BPreplay.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552E21D0065FF002834CE /* BPreplay.otf */; };
 		7AA552E71D0065FF002834CE /* BPreplayBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552E31D0065FF002834CE /* BPreplayBold.otf */; };
 		7AA552E81D0065FF002834CE /* BPreplayBoldItalics.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552E41D0065FF002834CE /* BPreplayBoldItalics.otf */; };
@@ -45,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesViewController.swift; sourceTree = "<group>"; };
 		7A7AC8341CFDD4CE006F5E4C /* Spitchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spitchy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7AC8371CFDD4CF006F5E4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A7AC8391CFDD4CF006F5E4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +65,11 @@
 		7A7AC8531CFDD4CF006F5E4C /* Spitchy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spitchy.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7AC8571CFDD4CF006F5E4C /* spitchyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spitchyUITests.swift; sourceTree = "<group>"; };
 		7A7AC8591CFDD4CF006F5E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A85AEA41D02DFC900FACB6C /* SpitchersCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpitchersCollectionCell.swift; sourceTree = "<group>"; };
+		7A85AEA61D02E5C600FACB6C /* SpitcherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpitcherModel.swift; sourceTree = "<group>"; };
+		7A85AEA81D02FBD800FACB6C /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7A85AEAA1D02FCF400FACB6C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		7A85AEAC1D02FE1000FACB6C /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		7AA552E21D0065FF002834CE /* BPreplay.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPreplay.otf; sourceTree = "<group>"; };
 		7AA552E31D0065FF002834CE /* BPreplayBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPreplayBold.otf; sourceTree = "<group>"; };
 		7AA552E41D0065FF002834CE /* BPreplayBoldItalics.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPreplayBoldItalics.otf; sourceTree = "<group>"; };
@@ -159,6 +171,8 @@
 				7AA552E51D0065FF002834CE /* BPreplayItalics.otf */,
 				7AA552EA1D00673D002834CE /* Lato-BlackItalic.ttf */,
 				7AA552EB1D00673D002834CE /* Lato-Regular.ttf */,
+				7A85AEA81D02FBD800FACB6C /* Lato-BoldItalic.ttf */,
+				7A85AEAA1D02FCF400FACB6C /* Lato-Light.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -168,7 +182,11 @@
 			children = (
 				7AD33BB71CFDE332004258CE /* BridgeController.swift */,
 				7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */,
+				7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */,
+				7A85AEAC1D02FE1000FACB6C /* TopicModel.swift */,
 				7AA552EE1D00679A002834CE /* SignInViewController.swift */,
+				7A85AEA41D02DFC900FACB6C /* SpitchersCollectionCell.swift */,
+				7A85AEA61D02E5C600FACB6C /* SpitcherModel.swift */,
 				7AA552F01D006A46002834CE /* Design.swift */,
 			);
 			name = Controllers;
@@ -281,7 +299,9 @@
 				7AA552EC1D00673D002834CE /* Lato-BlackItalic.ttf in Resources */,
 				7AA552F31D006C5C002834CE /* Lato-Bold.ttf in Resources */,
 				7A7AC8421CFDD4CF006F5E4C /* LaunchScreen.storyboard in Resources */,
+				7A85AEAB1D02FCF400FACB6C /* Lato-Light.ttf in Resources */,
 				7AA552E91D0065FF002834CE /* BPreplayItalics.otf in Resources */,
+				7A85AEA91D02FBD800FACB6C /* Lato-BoldItalic.ttf in Resources */,
 				7A7AC83F1CFDD4CF006F5E4C /* Assets.xcassets in Resources */,
 				7AA552ED1D00673D002834CE /* Lato-Regular.ttf in Resources */,
 				7AA552E61D0065FF002834CE /* BPreplay.otf in Resources */,
@@ -312,12 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A85AEA71D02E5C600FACB6C /* SpitcherModel.swift in Sources */,
 				7AA552EF1D00679A002834CE /* SignInViewController.swift in Sources */,
 				7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */,
 				7A7AC8381CFDD4CF006F5E4C /* AppDelegate.swift in Sources */,
 				7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */,
+				7A85AEA51D02DFC900FACB6C /* SpitchersCollectionCell.swift in Sources */,
 				7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */,
 				7AA552F11D006A46002834CE /* Design.swift in Sources */,
+				7A0FE7251D0224E900A7B2EA /* LivesViewController.swift in Sources */,
+				7A85AEAD1D02FE1000FACB6C /* TopicModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
