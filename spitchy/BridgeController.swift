@@ -45,6 +45,16 @@ class BridgeController: UIPageViewController, UIScrollViewDelegate {
         
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        
+        //LightContent
+        return UIStatusBarStyle.LightContent
+        
+        //Default
+        //return UIStatusBarStyle.Default
+        
+    }
+    
 }
 
 //-- UIPageViewControllerDataSource

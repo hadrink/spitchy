@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7A0FE7251D0224E900A7B2EA /* LivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */; };
+		7A7891481D04A44B00D719D8 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7891471D04A44B00D719D8 /* Preview.swift */; };
+		7A78914A1D04A4AC00D719D8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7891491D04A4AC00D719D8 /* Session.swift */; };
+		7A78914C1D04A4D300D719D8 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */; };
+		7A78914E1D04A50800D719D8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78914D1D04A50800D719D8 /* CameraViewController.swift */; };
+		7A7891501D04B97F00D719D8 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A78914F1D04B97F00D719D8 /* Lato-Italic.ttf */; };
+		7A7891521D04BF9C00D719D8 /* HashtagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7891511D04BF9C00D719D8 /* HashtagModel.swift */; };
 		7A7AC8381CFDD4CF006F5E4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC8371CFDD4CF006F5E4C /* AppDelegate.swift */; };
 		7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AC8391CFDD4CF006F5E4C /* ViewController.swift */; };
 		7A7AC83D1CFDD4CF006F5E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7AC83B1CFDD4CF006F5E4C /* Main.storyboard */; };
@@ -52,6 +58,12 @@
 
 /* Begin PBXFileReference section */
 		7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesViewController.swift; sourceTree = "<group>"; };
+		7A7891471D04A44B00D719D8 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		7A7891491D04A4AC00D719D8 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
+		7A78914D1D04A50800D719D8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		7A78914F1D04B97F00D719D8 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		7A7891511D04BF9C00D719D8 /* HashtagModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagModel.swift; sourceTree = "<group>"; };
 		7A7AC8341CFDD4CE006F5E4C /* Spitchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spitchy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7AC8371CFDD4CF006F5E4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A7AC8391CFDD4CF006F5E4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +185,7 @@
 				7AA552EB1D00673D002834CE /* Lato-Regular.ttf */,
 				7A85AEA81D02FBD800FACB6C /* Lato-BoldItalic.ttf */,
 				7A85AEAA1D02FCF400FACB6C /* Lato-Light.ttf */,
+				7A78914F1D04B97F00D719D8 /* Lato-Italic.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -188,6 +201,11 @@
 				7A85AEA41D02DFC900FACB6C /* SpitchersCollectionCell.swift */,
 				7A85AEA61D02E5C600FACB6C /* SpitcherModel.swift */,
 				7AA552F01D006A46002834CE /* Design.swift */,
+				7A7891511D04BF9C00D719D8 /* HashtagModel.swift */,
+				7A78914D1D04A50800D719D8 /* CameraViewController.swift */,
+				7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */,
+				7A7891491D04A4AC00D719D8 /* Session.swift */,
+				7A7891471D04A44B00D719D8 /* Preview.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -298,6 +316,7 @@
 			files = (
 				7AA552EC1D00673D002834CE /* Lato-BlackItalic.ttf in Resources */,
 				7AA552F31D006C5C002834CE /* Lato-Bold.ttf in Resources */,
+				7A7891501D04B97F00D719D8 /* Lato-Italic.ttf in Resources */,
 				7A7AC8421CFDD4CF006F5E4C /* LaunchScreen.storyboard in Resources */,
 				7A85AEAB1D02FCF400FACB6C /* Lato-Light.ttf in Resources */,
 				7AA552E91D0065FF002834CE /* BPreplayItalics.otf in Resources */,
@@ -334,12 +353,17 @@
 			files = (
 				7A85AEA71D02E5C600FACB6C /* SpitcherModel.swift in Sources */,
 				7AA552EF1D00679A002834CE /* SignInViewController.swift in Sources */,
+				7A7891481D04A44B00D719D8 /* Preview.swift in Sources */,
 				7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */,
 				7A7AC8381CFDD4CF006F5E4C /* AppDelegate.swift in Sources */,
 				7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */,
 				7A85AEA51D02DFC900FACB6C /* SpitchersCollectionCell.swift in Sources */,
+				7A7891521D04BF9C00D719D8 /* HashtagModel.swift in Sources */,
 				7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */,
+				7A78914C1D04A4D300D719D8 /* DeviceSettings.swift in Sources */,
+				7A78914A1D04A4AC00D719D8 /* Session.swift in Sources */,
 				7AA552F11D006A46002834CE /* Design.swift in Sources */,
+				7A78914E1D04A50800D719D8 /* CameraViewController.swift in Sources */,
 				7A0FE7251D0224E900A7B2EA /* LivesViewController.swift in Sources */,
 				7A85AEAD1D02FE1000FACB6C /* TopicModel.swift in Sources */,
 			);
