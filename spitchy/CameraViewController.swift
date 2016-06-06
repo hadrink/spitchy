@@ -24,14 +24,22 @@ class CameraViewController: UIViewController {
     ]
     
     var hashtags = [HashtagModel]()
+    var timer: NSTimer?
     
     @IBOutlet var previewLayer: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var spitchy: UILabel!
     @IBOutlet var customTopicInput: UITextField!
     @IBOutlet var liveButton: UIButton!
+    @IBOutlet var topicButton: UIButton!
+    @IBOutlet var waveView: UIView!
+    
+    @IBOutlet var waveViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var waveViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var waveViewBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         session = Session()
         preview = Preview()
         
@@ -46,6 +54,42 @@ class CameraViewController: UIViewController {
         design()
         
         tableView.reloadData()
+        self.waveViewBottomConstraint.constant = 40
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(CameraViewController.animate), userInfo: nil, repeats: true)
+        
+    }
+    
+    
+    
+    func animate() {
+        self.waveViewBottomConstraint.constant = 25
+        self.waveViewHeightConstraint.constant = 100
+        self.waveViewWidthConstraint.constant = 100
+        
+        let animation = CABasicAnimation(keyPath: "cornerRadius")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.fromValue = self.waveView.layer.cornerRadius
+        animation.toValue = 50
+        animation.duration = 1.5
+        self.waveView.layer.addAnimation(animation, forKey: "cornerRadius")
+        
+        UIView.animateWithDuration(1.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            
+            self.waveView.frame.size = CGSize(width: 100, height: 100)
+            self.waveView.layer.opacity = 0
+            self.view.layoutIfNeeded()
+            
+            
+            }, completion: { (finished: Bool) -> Void in
+                
+                self.waveView.layer.opacity = 0.6
+                self.waveViewBottomConstraint.constant = 40
+                self.waveViewHeightConstraint.constant = 70
+                self.waveViewWidthConstraint.constant = 70
+                self.waveView.layer.cornerRadius = 35
+                self.view.layoutIfNeeded()
+        })
     }
     
     func initFakeHashtags(){
@@ -90,10 +134,20 @@ class CameraViewController: UIViewController {
         //-- Live Button
         liveButton.layer.frame.size = CGSize(width: 70, height: 70)
         liveButton.layer.backgroundColor = colors.blue.CGColor
-        liveButton.layer.opacity = 0.8
+        liveButton.layer.opacity = 1
         liveButton.layer.cornerRadius = liveButton.layer.frame.width / 2
+
+        //-- Topic button
+        topicButton.titleLabel?.font = UIFont(name: "BPreplay-Italic", size: 36)
+        topicButton.titleLabel?.textColor = colors.white
+        topicButton.tintColor = colors.white
         
-        print((liveButton.frame))
+        //-- Wave
+        //waveView.layer.frame.size = CGSize(width: 70, height: 70)
+        waveView.frame.size = CGSize(width: 70, height: 70)
+        waveView.layer.backgroundColor = colors.blue.CGColor
+        waveView.layer.opacity = 0.2
+        waveView.layer.cornerRadius = waveView.frame.size.width / 2
     }
 }
 
