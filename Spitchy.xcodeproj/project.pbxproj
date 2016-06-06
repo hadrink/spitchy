@@ -37,6 +37,7 @@
 		7AA552F31D006C5C002834CE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552F21D006C5C002834CE /* Lato-Bold.ttf */; };
 		7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */; };
 		7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD33BB71CFDE332004258CE /* BridgeController.swift */; };
+		F32A71D81D059F1A009D7214 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A71D71D059F1A009D7214 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		7AA552F21D006C5C002834CE /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		7AD33BB71CFDE332004258CE /* BridgeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
+		F32A71D71D059F1A009D7214 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */,
 				7A7891491D04A4AC00D719D8 /* Session.swift */,
 				7A7891471D04A44B00D719D8 /* Preview.swift */,
+				F32A71D71D059F1A009D7214 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */,
 				7A7AC8381CFDD4CF006F5E4C /* AppDelegate.swift in Sources */,
 				7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */,
+				F32A71D81D059F1A009D7214 /* ProfileViewController.swift in Sources */,
 				7A85AEA51D02DFC900FACB6C /* SpitchersCollectionCell.swift in Sources */,
 				7A7891521D04BF9C00D719D8 /* HashtagModel.swift in Sources */,
 				7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */,

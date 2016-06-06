@@ -93,7 +93,6 @@ class CameraViewController: UIViewController {
         liveButton.layer.opacity = 0.8
         liveButton.layer.cornerRadius = liveButton.layer.frame.width / 2
         
-        
         print((liveButton.frame))
     }
 }
