@@ -50,9 +50,13 @@ class ProfileViewController: UITableViewController {
         profilePicture.clipsToBounds = true
         
         //-- Follow
-        followLabel.text = "Follow"
+        followLabel.text = "Informations"
         followLabel.textColor = colors.white
         followLabel.font = UIFont(name: "Lato-BoldItalic", size: 18)
         followBackground.backgroundColor = colors.blue
+        
+        //-- TableView
+        tableView.tableFooterView = UIView()    //-- No display cell empty
+        tableView.bounces = false
     }
 }

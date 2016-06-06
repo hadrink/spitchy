@@ -358,7 +358,7 @@
                         <sections>
                             <tableViewSection id="s4s-bW-pdd">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="300" id="Fuh-wr-aac">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="289" id="Fuh-wr-aac">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fuh-wr-aac" id="VLY-C7-uSd">
@@ -388,7 +388,15 @@
                                                         <constraint firstAttribute="height" constant="44" id="Mgg-QJ-9uo"/>
                                                     </constraints>
                                                     <items>
-                                                        <navigationItem title="Profil" id="lI7-CM-lad"/>
+                                                        <navigationItem title="Profil" id="lI7-CM-lad">
+                                                            <barButtonItem key="rightBarButtonItem" image="icon-logo-nav" style="plain" id="F8c-Rc-PNi">
+                                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uuR-az-VDF">
+                                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <state key="normal" image="icon-logo-nav"/>
+                                                                </button>
+                                                            </barButtonItem>
+                                                        </navigationItem>
                                                     </items>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -410,7 +418,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGF-5h-sA7">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7x-Cm-M2F">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7x-Cm-M2F">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
