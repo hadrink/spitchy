@@ -23,3 +23,17 @@ class ListLivesViewController: UIViewController {
     }
     
 }
+
+extension ListLivesViewController: UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell : ListLiveCell = collectionView.dequeueReusableCellWithReuseIdentifier("ListLiveCell", forIndexPath: indexPath) as! ListLiveCell
+        
+        cell.backgroundColor = UIColor.redColor()
+        
+        return cell
+    }
+}

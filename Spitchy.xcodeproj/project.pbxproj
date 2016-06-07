@@ -39,6 +39,7 @@
 		7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD33BB71CFDE332004258CE /* BridgeController.swift */; };
 		F32A71D81D059F1A009D7214 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A71D71D059F1A009D7214 /* ProfileViewController.swift */; };
 		F3AF54DC1D0709B20030AFCE /* ListLivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */; };
+		F3AF54DE1D0732260030AFCE /* ListLiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF54DD1D0732260030AFCE /* ListLiveCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		7AD33BB71CFDE332004258CE /* BridgeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
 		F32A71D71D059F1A009D7214 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLivesViewController.swift; sourceTree = "<group>"; };
+		F3AF54DD1D0732260030AFCE /* ListLiveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLiveCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				7A7891471D04A44B00D719D8 /* Preview.swift */,
 				F32A71D71D059F1A009D7214 /* ProfileViewController.swift */,
 				F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */,
+				F3AF54DD1D0732260030AFCE /* ListLiveCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				7A85AEA51D02DFC900FACB6C /* SpitchersCollectionCell.swift in Sources */,
 				7A7891521D04BF9C00D719D8 /* HashtagModel.swift in Sources */,
 				7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */,
+				F3AF54DE1D0732260030AFCE /* ListLiveCell.swift in Sources */,
 				7A78914C1D04A4D300D719D8 /* DeviceSettings.swift in Sources */,
 				7A78914A1D04A4AC00D719D8 /* Session.swift in Sources */,
 				7AA552F11D006A46002834CE /* Design.swift in Sources */,
