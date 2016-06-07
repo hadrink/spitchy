@@ -30,7 +30,7 @@ extension ListLivesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell : ListLiveCell = collectionView.dequeueReusableCellWithReuseIdentifier("ListLiveCell", forIndexPath: indexPath) as! ListLiveCell
+        let cell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("liveCell", forIndexPath: indexPath)
         
         cell.backgroundColor = UIColor.redColor()
         
