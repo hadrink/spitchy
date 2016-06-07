@@ -34,7 +34,6 @@ class BridgeController: UIPageViewController, UIScrollViewDelegate {
     
     //-- Switch view when user click action
     func goToNextVC() {
-        
         let nextVC = pageViewController(self, viewControllerAfterViewController: viewControllers![0] )!
         setViewControllers([nextVC], direction: .Forward, animated: true, completion: nil)
     }
@@ -42,7 +41,6 @@ class BridgeController: UIPageViewController, UIScrollViewDelegate {
     func goToPreviousVC() {
         let previousVC = pageViewController(self, viewControllerBeforeViewController: viewControllers![0] )!
         setViewControllers([previousVC], direction: .Reverse, animated: true, completion: nil)
-        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
