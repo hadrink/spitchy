@@ -38,6 +38,7 @@
 		7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */; };
 		7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD33BB71CFDE332004258CE /* BridgeController.swift */; };
 		F32A71D81D059F1A009D7214 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A71D71D059F1A009D7214 /* ProfileViewController.swift */; };
+		F3AF54DC1D0709B20030AFCE /* ListLivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		7AD33BB71CFDE332004258CE /* BridgeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
 		F32A71D71D059F1A009D7214 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLivesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				7A7891491D04A4AC00D719D8 /* Session.swift */,
 				7A7891471D04A44B00D719D8 /* Preview.swift */,
 				F32A71D71D059F1A009D7214 /* ProfileViewController.swift */,
+				F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A85AEA71D02E5C600FACB6C /* SpitcherModel.swift in Sources */,
+				F3AF54DC1D0709B20030AFCE /* ListLivesViewController.swift in Sources */,
 				7AA552EF1D00679A002834CE /* SignInViewController.swift in Sources */,
 				7A7891481D04A44B00D719D8 /* Preview.swift in Sources */,
 				7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */,

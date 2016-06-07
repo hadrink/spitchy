@@ -34,7 +34,6 @@ class BridgeController: UIPageViewController, UIScrollViewDelegate {
     
     //-- Switch view when user click action
     func goToNextVC() {
-        
         let nextVC = pageViewController(self, viewControllerAfterViewController: viewControllers![0] )!
         setViewControllers([nextVC], direction: .Forward, animated: true, completion: nil)
     }
@@ -70,7 +69,7 @@ extension BridgeController: UIPageViewControllerDataSource {
         case TopicVC:
             return CameraVC
         default:
-            return nil
+            return CameraVC
         }
     }
     
@@ -81,7 +80,7 @@ extension BridgeController: UIPageViewControllerDataSource {
         case ProfileVC:
             return CameraVC
         default:
-            return nil
+            return CameraVC
         }
     }
 }

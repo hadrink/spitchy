@@ -40,6 +40,8 @@ class LivesViewController: UIViewController {
     var spitchers = [SpitcherModel]()
     var topics = [TopicModel]()
     
+    var valueToPass:String!
+    
     @IBOutlet var navBar: UINavigationBar!
     @IBOutlet var statusBarBackground: UIView!
     @IBOutlet var collectionView: UICollectionView!
@@ -47,6 +49,7 @@ class LivesViewController: UIViewController {
     @IBOutlet var spitchersLabel: UILabel!
     @IBOutlet var backgroundViewTopicsLabel: UIView!
     @IBOutlet var topicsLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,12 +125,11 @@ extension LivesViewController: UICollectionViewDataSource {
         cell.usernameLabel.font = UIFont(name: "Lato-Regular", size: 11)
         cell.topicLabel.font = UIFont(name: "Lato-Light", size: 11)
         
-        
         return cell
     }
 }
 
-extension LivesViewController: UITableViewDataSource {
+extension LivesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return topics.count
@@ -151,6 +153,21 @@ extension LivesViewController: UITableViewDataSource {
         cell.accessoryView?.frame = adjustedAccessory!
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        let indexPath = self.tableView.indexPathForSelectedRow!
+        
+        if (segue.identifier == "goToListLives") {
+            let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+            valueToPass = currentCell.textLabel!.text
+            
+            // initialize new view controller and cast it as your view controller
+            let listLivesViewController = segue.destinationViewController as! ListLivesViewController
+            // your new view controller should have property that will store passed value
+            listLivesViewController.thisTopic = valueToPass
+        }
+        
     }
     
 }

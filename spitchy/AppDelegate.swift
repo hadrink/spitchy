@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let initialViewController = bridgeController
+        //let initialViewController = bridgeController
         //window?.rootViewController = initialViewController
         return true
     }

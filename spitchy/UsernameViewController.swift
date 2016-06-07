@@ -44,7 +44,7 @@ class UsernameViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func goAction(sender: UIButton) {
-        let bridgeController = BridgeController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        //let bridgeController = BridgeController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         self.presentViewController(bridgeController, animated: true, completion: nil)
     }
     
@@ -76,8 +76,6 @@ class UsernameViewController: UIViewController, UIGestureRecognizerDelegate {
     func keyboardWillShow(sender: NSNotification){
         let info = sender.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        
-        print(keyboardFrame)
 
         UIView.animateWithDuration(0.25, animations: { () -> Void in
             self.view.frame.origin.y = -self.infosLabel.frame.origin.y * 2 + self.view.frame.height + 20

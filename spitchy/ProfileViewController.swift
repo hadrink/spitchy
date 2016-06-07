@@ -15,6 +15,7 @@ class ProfileViewController: UITableViewController {
 
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var profileBackground: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var followBackground: UIView!
@@ -48,6 +49,19 @@ class ProfileViewController: UITableViewController {
         //-- Profile
         profilePicture.layer.cornerRadius = 60
         profilePicture.clipsToBounds = true
+        
+        //-- Add blur on the profile picture views
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+            self.view.backgroundColor = UIColor.clearColor()
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            
+            //always fill the view
+            blurEffectView.frame = profileBackground.bounds
+            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+            
+            profileBackground.addSubview(blurEffectView)
+        }
         
         //-- Follow
         followLabel.text = "Informations"

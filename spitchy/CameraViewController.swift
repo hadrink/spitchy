@@ -149,6 +149,14 @@ class CameraViewController: UIViewController {
         waveView.layer.opacity = 0.2
         waveView.layer.cornerRadius = waveView.frame.size.width / 2
     }
+    
+    @IBAction func hashtagButton(sender: UIButton) {
+        bridgeController.goToNextVC()
+    }
+    
+    @IBAction func profileButton(sender: UIButton) {
+        bridgeController.goToPreviousVC()
+    }
 }
 
 
