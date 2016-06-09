@@ -126,6 +126,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A4D751C1D09B27600C5D369 /* Username */ = {
+			isa = PBXGroup;
+			children = (
+				7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */,
+			);
+			name = Username;
+			sourceTree = "<group>";
+		};
+		7A4D751D1D09B29B00C5D369 /* ListLives */ = {
+			isa = PBXGroup;
+			children = (
+				F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */,
+				F3AF54DD1D0732260030AFCE /* ListLiveCell.swift */,
+			);
+			name = ListLives;
+			sourceTree = "<group>";
+		};
+		7A4D751E1D09B2AF00C5D369 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F32A71D71D059F1A009D7214 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		7A4D751F1D09B2BC00C5D369 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7A78914D1D04A50800D719D8 /* CameraViewController.swift */,
+				7A7891511D04BF9C00D719D8 /* HashtagModel.swift */,
+				7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */,
+				7A7891491D04A4AC00D719D8 /* Session.swift */,
+				7A7891471D04A44B00D719D8 /* Preview.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		7A4D75201D09B2DF00C5D369 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				7AA552EE1D00679A002834CE /* SignInViewController.swift */,
+			);
+			name = SignIn;
+			sourceTree = "<group>";
+		};
+		7A4D75211D09B2F400C5D369 /* Lives */ = {
+			isa = PBXGroup;
+			children = (
+				7A85AEAC1D02FE1000FACB6C /* TopicModel.swift */,
+				7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */,
+				7A85AEA41D02DFC900FACB6C /* SpitchersCollectionCell.swift */,
+				7A85AEA61D02E5C600FACB6C /* SpitcherModel.swift */,
+			);
+			name = Lives;
+			sourceTree = "<group>";
+		};
 		7A7AC82B1CFDD4CE006F5E4C = {
 			isa = PBXGroup;
 			children = (
@@ -200,21 +256,13 @@
 			isa = PBXGroup;
 			children = (
 				7AD33BB71CFDE332004258CE /* BridgeController.swift */,
-				7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */,
-				7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */,
-				7A85AEAC1D02FE1000FACB6C /* TopicModel.swift */,
-				7AA552EE1D00679A002834CE /* SignInViewController.swift */,
-				7A85AEA41D02DFC900FACB6C /* SpitchersCollectionCell.swift */,
-				7A85AEA61D02E5C600FACB6C /* SpitcherModel.swift */,
 				7AA552F01D006A46002834CE /* Design.swift */,
-				7A7891511D04BF9C00D719D8 /* HashtagModel.swift */,
-				7A78914D1D04A50800D719D8 /* CameraViewController.swift */,
-				7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */,
-				7A7891491D04A4AC00D719D8 /* Session.swift */,
-				7A7891471D04A44B00D719D8 /* Preview.swift */,
-				F32A71D71D059F1A009D7214 /* ProfileViewController.swift */,
-				F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */,
-				F3AF54DD1D0732260030AFCE /* ListLiveCell.swift */,
+				7A4D751C1D09B27600C5D369 /* Username */,
+				7A4D75211D09B2F400C5D369 /* Lives */,
+				7A4D75201D09B2DF00C5D369 /* SignIn */,
+				7A4D751F1D09B2BC00C5D369 /* Camera */,
+				7A4D751E1D09B2AF00C5D369 /* Profile */,
+				7A4D751D1D09B29B00C5D369 /* ListLives */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

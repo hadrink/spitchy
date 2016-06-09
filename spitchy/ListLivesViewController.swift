@@ -13,9 +13,11 @@ class ListLivesViewController: UIViewController {
 
     var thisTopic:String!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         design()
+        collectionView.contentInset.top = collectionView.frame.height / 2 + 10
     }
     
     func design(){
@@ -24,16 +26,17 @@ class ListLivesViewController: UIViewController {
     
 }
 
-extension ListLivesViewController: UICollectionViewDataSource {
+extension ListLivesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell : UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("liveCell", forIndexPath: indexPath)
+        let cell : ListLiveCell = collectionView.dequeueReusableCellWithReuseIdentifier("liveCell", forIndexPath: indexPath) as! ListLiveCell
         
         cell.backgroundColor = UIColor.redColor()
         
         return cell
     }
+    
 }

@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 class ListLiveCell: UICollectionViewCell {
+    @IBOutlet var username: UILabel!
+    @IBOutlet var nbViewers: UILabel!
     
-   
-    
+    override var bounds: CGRect {
+        didSet {
+            contentView.frame = bounds
+        }
+    }
 }
