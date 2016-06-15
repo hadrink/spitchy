@@ -23,6 +23,9 @@ class CameraViewController: UIViewController {
         "#Paulette",
     ]
     
+    var fakePreview: FakePreview?
+    @IBOutlet var fakeView: UIView!
+    
     var hashtags = [HashtagModel]()
     var timer: NSTimer?
     
@@ -38,6 +41,7 @@ class CameraViewController: UIViewController {
     @IBOutlet var waveViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var waveViewBottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet var imageTest: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         session = Session()
@@ -49,6 +53,17 @@ class CameraViewController: UIViewController {
         
         previewLayer.layer.addSublayer(previewAudioVideo!)
         sessionAudioVideo?.startRunning()
+        
+        fakePreview = FakePreview.sharedInstance
+        
+        let fakeSize = CGSize(width: 200, height: 600)
+        fakePreview?.createFakePreview(fakeSize)
+        let previewFake = fakePreview!.preview
+        
+
+        
+        fakeView.layer.addSublayer(previewFake!)
+        imageTest.image = fakePreview?.image
         
         initFakeHashtags()
         design()
@@ -151,7 +166,8 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func hashtagButton(sender: UIButton) {
-        bridgeController.goToNextVC()
+        //bridgeController.goToNextVC()
+        imageTest.image = fakePreview?.image
     }
     
     @IBAction func profileButton(sender: UIButton) {

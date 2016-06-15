@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A0FE7251D0224E900A7B2EA /* LivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */; };
+		7A4D75231D09F6C400C5D369 /* ListLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D75221D09F6C400C5D369 /* ListLiveModel.swift */; };
 		7A7891481D04A44B00D719D8 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7891471D04A44B00D719D8 /* Preview.swift */; };
 		7A78914A1D04A4AC00D719D8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7891491D04A4AC00D719D8 /* Session.swift */; };
 		7A78914C1D04A4D300D719D8 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesViewController.swift; sourceTree = "<group>"; };
+		7A4D75221D09F6C400C5D369 /* ListLiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLiveModel.swift; sourceTree = "<group>"; };
 		7A7891471D04A44B00D719D8 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		7A7891491D04A4AC00D719D8 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				F3AF54DB1D0709B20030AFCE /* ListLivesViewController.swift */,
 				F3AF54DD1D0732260030AFCE /* ListLiveCell.swift */,
+				7A4D75221D09F6C400C5D369 /* ListLiveModel.swift */,
 			);
 			name = ListLives;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			files = (
 				7A85AEA71D02E5C600FACB6C /* SpitcherModel.swift in Sources */,
 				F3AF54DC1D0709B20030AFCE /* ListLivesViewController.swift in Sources */,
+				7A4D75231D09F6C400C5D369 /* ListLiveModel.swift in Sources */,
 				7AA552EF1D00679A002834CE /* SignInViewController.swift in Sources */,
 				7A7891481D04A44B00D719D8 /* Preview.swift in Sources */,
 				7A7AC83A1CFDD4CF006F5E4C /* ViewController.swift in Sources */,

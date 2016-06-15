@@ -12,6 +12,7 @@ import AVFoundation
 class Preview {
     
     var previewLayer: AVCaptureVideoPreviewLayer?
+    var fakePreviewLayer: AVSampleBufferDisplayLayer?
     
     func createPreview(size: CGSize, session: AVCaptureSession) -> AVCaptureVideoPreviewLayer? {
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
@@ -21,6 +22,12 @@ class Preview {
         previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
         
         return previewLayer
+    }
+    
+    func createFakePreview(size: CGSize, session: AVCaptureSession) -> AVSampleBufferDisplayLayer? {
+        fakePreviewLayer = AVSampleBufferDisplayLayer()
+        fakePreviewLayer?.frame.size = size
+        return fakePreviewLayer
     }
 }
 
