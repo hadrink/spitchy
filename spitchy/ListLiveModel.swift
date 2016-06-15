@@ -11,11 +11,11 @@ import Foundation
 class ListLiveModel {
     var username: String
     var nbUsers: Int
-    var stream: NSInputStream
+    var image: NSInputStream
     
-    init(username: String, nbUsers: Int, stream: NSInputStream) {
-        self.username = username
-        self.nbUsers = nbUsers
-        self.stream = stream
+    init(image: NSInputStream) {
+        self.username = "Romain"
+        self.nbUsers = 10
+        self.image = image
     }
 }

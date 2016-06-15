@@ -104,9 +104,6 @@ class Session: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAu
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
         
-        
-        
-        print("capture")
         if connection.supportsVideoOrientation {
             connection.videoOrientation = AVCaptureVideoOrientation.Portrait
         }
@@ -322,7 +319,7 @@ class Session: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAu
         let height: size_t = CVPixelBufferGetHeight(imageBuffer)
         let baseAddress = UnsafeMutablePointer<UInt8>(CVPixelBufferGetBaseAddress(imageBuffer))
         
-        print("Base Address \(baseAddress[4])")
+        //print("Base Address \(baseAddress[4])")
         let pixelFormatType = CVPixelBufferGetPixelFormatType(imageBuffer)
         
         
@@ -396,7 +393,7 @@ class FakePreview {
     
     func enqueueSampleBuffer(preview: AVSampleBufferDisplayLayer, sampleBuffer: CMSampleBuffer) {
         if preview.readyForMoreMediaData {
-            print("Video layer 2")
+            //print("Video layer 2")
             
             var pts:Double  = CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(sampleBuffer));
             
@@ -408,7 +405,7 @@ class FakePreview {
             if CMSampleBufferIsValid(sampleBuffer) {
                 preview.enqueueSampleBuffer(sampleBuffer)
             
-                print("Preview Status \(preview.status)")
+                //print("Preview Status \(preview.status)")
                 
             }
         }

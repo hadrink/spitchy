@@ -120,9 +120,9 @@ class CameraViewController: UIViewController {
         spitchy.textColor = colors.white
         
         for family in UIFont.familyNames() {
-            print(family)
+            //print(family)
             for names in UIFont.fontNamesForFamilyName(family) {
-                print("== \(names)")
+                //print("== \(names)")
             }
         }
         
