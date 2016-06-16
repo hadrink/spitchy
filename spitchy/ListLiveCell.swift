@@ -12,7 +12,7 @@ import UIKit
 class ListLiveCell: UICollectionViewCell {
     @IBOutlet var username: UILabel!
     @IBOutlet var nbViewers: UILabel!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet var image: UIImageView!
     
     override var bounds: CGRect {
         didSet {

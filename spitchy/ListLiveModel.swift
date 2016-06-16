@@ -10,26 +10,18 @@ import Foundation
 import UIKit
 
 class ListLiveModel {
-    var username: String
-    var nbUsers: Int
+    var username: String?
+    var nbUsers: String?
     var image: UIImage?
-    var videoWidth: Int
-    var videoHeight: Int
-    var bytesPerRow: Int
-    var pixelFormat: Int
-    var bufferID: String
+    var liveID: String?
     
-    init(bytesPerRow: Int, videoWidth: Int, videoHeight: Int, pixelFormat: Int) {
-        self.username = "Romain"
-        self.nbUsers = 10
-        self.bufferID = "bufferID"
-        self.videoWidth = videoWidth
-        self.videoHeight = videoHeight
-        self.bytesPerRow = bytesPerRow
-        self.pixelFormat = pixelFormat
+    init(username: String, nbUsers: Int, liveID: String, imageName: String) {
+        self.username = username
+        self.nbUsers = String(nbUsers)
+        self.liveID = "bufferID"
         
         //self.image = bufferManager?.bufferToImage(buffer, bytesPerRow: bytesPerRow, width: videoWidth, height: videoHeight, pixelFormatType: pixelFormat)
         
-        self.image = UIImage(named: "topic-economy")
+        self.image = UIImage(named: imageName)
     }
 }

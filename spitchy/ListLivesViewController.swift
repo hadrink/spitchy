@@ -20,8 +20,9 @@ class ListLivesViewController: UIViewController {
     var socket: SocketIOClient?
     
     var fakeData = [
-        ["bytes_per_row" : 796, "width" : 640, "height" : 480, "pixel_format" : 1111970369 ],
-        ["bytes_per_row" : 796, "width" : 640, "height" : 480, "pixel_format" : 1111970369 ]
+        ["username" : "Jean-mi", "nb_users" : 640, "preview_image" : "topic-economy", "live_id" : "buffer_to_device" ],
+        ["username" : "Paul", "nb_users" : 400, "preview_image" : "topic-politique", "live_id" : "buffer_to_device" ],
+        ["username" : "Bertrand", "nb_users" : 300, "preview_image" : "topic-sport", "live_id" : "buffer_to_device" ]
     ]
     
     override func viewDidLoad() {
@@ -37,29 +38,36 @@ class ListLivesViewController: UIViewController {
     }
     
     func design(){
+        collectionView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         navBar.topItem?.title = thisTopic
         self.mainBackground.image = lives[0].image
     }
     
     func initFakeData(){
         for data in fakeData {
-            lives.append(ListLiveModel(bytesPerRow: data["bytes_per_row"]!, videoWidth: data["width"]!, videoHeight: data["height"]!, pixelFormat: data["height"]!))
+            lives.append(
+                ListLiveModel(
+                    username  : data["username"] as! String,
+                    nbUsers   : data["nb_users"] as! Int,
+                    liveID    : data["live_id"] as! String,
+                    imageName : data["preview_image"] as! String
+                )
+            )
         }
     }
     
     
     func livePreview(indexPath: NSIndexPath, cell: ListLiveCell) {
-                
-        socket?.on("buffer_to_device") { data, ack in
-            
-            if let buffer = data[0] as? NSData {
-                let imageUncompressed = buffer.uncompressedDataUsingCompression(Compression.LZMA)
-                cell.image.image = UIImage(data: imageUncompressed!)
+        
+        if let liveToPreview = lives[indexPath.row].liveID {
+            socket?.on(liveToPreview) { data, ack in
+                if let buffer = data[0] as? NSData {
+                    let imageUncompressed = buffer.uncompressedDataUsingCompression(Compression.LZMA)
+                    cell.image.image = UIImage(data: imageUncompressed!)
+                }
             }
-            
         }
     }
-    
 }
 
 extension ListLivesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -70,15 +78,9 @@ extension ListLivesViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : ListLiveCell = collectionView.dequeueReusableCellWithReuseIdentifier("liveCell", forIndexPath: indexPath) as! ListLiveCell
         
-        cell.username.text = "Jean mi"
-        cell.nbViewers.text = "4444"
-        cell.image.image = lives[indexPath.row].image
-        
-        
-        
-        //cell.username.text = lives[indexPath.row].username
-        //cell.nbViewers.text = String(lives[indexPath.row].nbUsers)
-        //cell.backgroundColor = UIColor.redColor()
+        cell.username.text  = lives[indexPath.row].username
+        cell.nbViewers.text = lives[indexPath.row].nbUsers
+        cell.image.image    = lives[indexPath.row].image
         
         return cell
     }
