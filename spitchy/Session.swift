@@ -19,6 +19,7 @@ class Session: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAu
     var inputAudio: AVCaptureDeviceInput?
     var outputVideo: AVCaptureVideoDataOutput?
     var outputAudio: AVCaptureAudioDataOutput?
+    var socket: SocketIOClient?
     
     var fakePreview = FakePreview.sharedInstance
     
@@ -29,9 +30,12 @@ class Session: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAu
     let deviceSettings = DeviceSettings()
     
     func createSession() -> AVCaptureSession {
+        
+        socket = SocketIOClient(socketURL: "http://vps224869.ovh.net:3005")
+        socket?.connect()
         sessionQueue = dispatch_queue_create("cameraQueue", DISPATCH_QUEUE_SERIAL)
         session = AVCaptureSession()
-        session?.sessionPreset = AVCaptureSessionPreset640x480
+        session?.sessionPreset = AVCaptureSessionPresetMedium
         
         addVideoInput()
         addAudioInput()
@@ -81,9 +85,11 @@ class Session: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAu
         outputVideo?.alwaysDiscardsLateVideoFrames = true
         outputVideo?.setSampleBufferDelegate(self, queue: sessionQueue)
         
-        let videoSettings = [kCVPixelBufferPixelFormatTypeKey as NSString:Int(kCVPixelFormatType_32BGRA), AVVideoCodecKey : AVVideoCodecH264 ]
+        let compressionSettings = [ AVVideoProfileLevelKey: AVVideoProfileLevelH264Main41, AVVideoAverageBitRateKey : 24*(1024.0*1024.0)]
         
-        outputVideo?.videoSettings = videoSettings as! [NSObject : AnyObject]
+        let videoSettings = [kCVPixelBufferPixelFormatTypeKey as NSString:Int(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange), AVVideoCodecKey : AVVideoCodecH264, AVVideoCompressionPropertiesKey: compressionSettings, AVVideoWidthKey : 480,  AVVideoHeightKey : 640 ]
+        
+        outputVideo?.videoSettings = videoSettings
         
         if session!.canAddOutput(outputVideo) {
             session!.addOutput(outputVideo)
@@ -123,146 +129,43 @@ class Session: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAu
         
         if CMSampleBufferGetImageBuffer(sampleBuffer) != nil {
             
-            
-            
-            /*var pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
-            
-            CVPixelBufferLockBaseAddress(pixelBuffer!, 0)
-            
-            let rawImageBytes = CVPixelBufferGetBaseAddress(pixelBuffer!)
-            let bufferData = UnsafeMutablePointer<UInt8>(CVPixelBufferGetBaseAddress(pixelBuffer!))
-            
-            CVPixelBufferUnlockBaseAddress(pixelBuffer!, 0)
-
-            let bytesPerRow = CVPixelBufferGetBytesPerRow(pixelBuffer!)
-            let bufferWidth = CVPixelBufferGetWidth(pixelBuffer!)
-            let bufferHeight = CVPixelBufferGetHeight(pixelBuffer!)
-            let formatType: OSType = CVPixelBufferGetPixelFormatType(pixelBuffer!)
-
-            let dataSize = CVPixelBufferGetDataSize(pixelBuffer!)
-            
-            print("Data size pixel buffer 1 \(dataSize)")
-            
-            
-            print("Image Bytes \(rawImageBytes)")
-            print("Bytes Per Row \(bytesPerRow)")
-            print("Buffer Width \(bufferWidth)")
-            print("Buffer Height \(bufferHeight)")
-            print("Buffer data \(bufferData[3])")
-            print("Format Type \(formatType)")
-            
-            //var buffer = [UInt8](count: 4*bufferWidth*bufferHeight, repeatedValue: 0)
-            
-            var PTS : CMTime = kCMTimeZero
-            let time: Float = Float( CMTimeGetSeconds(PTS) * 0.6 )
-            let scale: Float = 1.0
-            let componentsPerPixel = 4
-            let buffer: UnsafeMutablePointer<__uint8_t> = UnsafeMutablePointer<__uint8_t>.alloc(Int(bufferWidth * bufferHeight) * componentsPerPixel)
-            
-            let bpr = bufferWidth * componentsPerPixel
-            
-            for y in 0..<Int(bufferHeight) {
-                for x in 0..<Int(bufferWidth) {
-                    
-                    var cx: Float = Float(x) / Float(componentsPerPixel) * scale;
-                    var cy = Float(y) * scale;
-                    
-                    var v: Float = sinf(cx+time);
-                    v += sinf(cy+time);
-                    v += sinf(cx+cy+time);
-                    
-                    cx += scale * sinf(time*0.33);
-                    cy += scale * cosf(time*0.2);
-                    
-                    v += sinf(sqrtf(cx*cx + cy*cy + 1.0)+time);
-                    
-                    //Set the R, G, B channels to the desired color
-                    buffer[(y * bpr) + (componentsPerPixel*x)] = __uint8_t( max( Double(sinf( v * Float(M_PI) )) * Double(UINT8_MAX), 0) );
-                    buffer[(y * bpr) + (componentsPerPixel*x)+1] = __uint8_t( max( Double(cosf( v * Float(M_PI) )) * Double(UINT8_MAX), 0) );
-                    buffer[(y * bpr) + (componentsPerPixel*x)+2] = 0;
-                }
-            }
-            //print(buffer)
-            
-            var newPixelBuffer: CVPixelBufferRef?
-            var status = CVPixelBufferCreateWithBytes(kCFAllocatorDefault, bufferWidth, bufferHeight, kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, buffer, bytesPerRow, nil, &newPixelBuffer, nil, &newPixelBuffer)
-            
-            if(status != kCVReturnSuccess) {
-                NSLog("Failed to create buffer pixel");
+            if let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
+                CVPixelBufferLockBaseAddress(imageBuffer, 0)
+                let bytesPerRow: size_t = CVPixelBufferGetBytesPerRow(imageBuffer)
+                let width: size_t = CVPixelBufferGetWidth(imageBuffer)
+                let height: size_t = CVPixelBufferGetHeight(imageBuffer)
+                let baseAddress = UnsafeMutablePointer<UInt8>(CVPixelBufferGetBaseAddress(imageBuffer))
+                let pixelFormatType = CVPixelBufferGetPixelFormatType(imageBuffer)
+                CVPixelBufferUnlockBaseAddress(imageBuffer, 0)
+                
+                let data = NSData(bytes: baseAddress, length: bytesPerRow * height)
+                
+                var ciImage: CIImage = CIImage(CVImageBuffer: imageBuffer)
+                var context: CIContext = CIContext(options: nil)
+                var videoImage: CGImageRef = context.createCGImage(ciImage, fromRect: CGRectMake(0, 0, 240, 320))
+                var finalImage: UIImage = UIImage(CGImage: videoImage)
+                
+                var compressed = UIImageJPEGRepresentation(finalImage, 0)
+                
+                print(compressed!.length / 1024)
+                
+                print(data.length / 1024)
+                
+                let imageCompress = compressed!.compressedDataUsingCompression(Compression.LZMA)
+                
+                print(imageCompress!.length / 1024)
+                
+    
+                
+                
+                socket?.emit("buffer_to_server", imageCompress!)
+                
+                
             }
             
-            
-            CVPixelBufferLockBaseAddress(newPixelBuffer!, 0)
-            
-            let baseAddressNewPixel = CVPixelBufferGetBaseAddress(newPixelBuffer!)
-            print("Base Address \(baseAddressNewPixel)")
-
-            CVPixelBufferUnlockBaseAddress(newPixelBuffer!, 0)
-
-            let dataSizeNewPixelBuffer = CVPixelBufferGetDataSize(newPixelBuffer!)
-            print("Data size pixel buffer 2 \(dataSizeNewPixelBuffer)")
-            
-            var videoInfo: CMVideoFormatDescriptionRef?
-            status = CMVideoFormatDescriptionCreateForImageBuffer(kCFAllocatorDefault, newPixelBuffer!, &videoInfo)
-            
-            print(videoInfo)
-            
-            var sampleTimingInfo = CMSampleTimingInfo()
-            //status = CMSampleBufferGetSampleTimingInfo(<#T##sbuf: CMSampleBuffer##CMSampleBuffer#>, <#T##sampleIndex: CMItemIndex##CMItemIndex#>, <#T##timingInfoOut: UnsafeMutablePointer<CMSampleTimingInfo>##UnsafeMutablePointer<CMSampleTimingInfo>#>)
-            
-            status = CMSampleBufferGetSampleTimingInfo(sampleBuffer, 0, &sampleTimingInfo)
-            
-            if(status != kCVReturnSuccess) {
-                NSLog("Failed to create timing ingo");
-            }
-            
-            
-            //print("Timing info \(sampleTimingInfo)")
-            
-            let dataSizeNewPixelBuffer2 = CVPixelBufferGetDataSize(newPixelBuffer!)
-            print("Data size pixel buffer 2 \(dataSizeNewPixelBuffer2)")
-            
-            
-            var newSampleBuffer: CMSampleBufferRef?
-            status = CMSampleBufferCreateForImageBuffer(kCFAllocatorDefault, newPixelBuffer!, true, nil, nil, videoInfo!, &sampleTimingInfo, &newSampleBuffer)
-            
-            if(status != kCVReturnSuccess) {
-                NSLog("Failed to create CMSampleBuffer");
-            }
-            
-            //status = CMSampleBufferCreateReadyWithImageBuffer(kCFAllocatorDefault, newPixelBuffer!, videoInfo!, &sampleTimingInfo, &newSampleBuffer)
-            
-            
-            let dataSizeNewPixelBuffer3 = CVPixelBufferGetDataSize(newPixelBuffer!)
-            print("Data size pixel buffer 2 \(dataSizeNewPixelBuffer3)")
-
-            
-            //print(newSampleBuffer)
- 
-            */
-            
-            
-            
-            
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                // do some task
-                self.cloneBuffer(sampleBuffer!)
-                dispatch_async(dispatch_get_main_queue(), {
-                    // update some UI
-                    });
-                });
-            
-            
+                //self.cloneBuffer(sampleBuffer!)
            
         }
-        
-        // OutputBytes
-        // BytesPerRow
-        // Output_Width
-        // Output_Height
-        //CVPixelBufferCreateWithBytes
-        
         
     }
     

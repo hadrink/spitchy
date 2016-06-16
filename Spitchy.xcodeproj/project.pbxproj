@@ -38,8 +38,9 @@
 		7AA552F31D006C5C002834CE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA552F21D006C5C002834CE /* Lato-Bold.ttf */; };
 		7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */; };
 		7AD33BB81CFDE332004258CE /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD33BB71CFDE332004258CE /* BridgeController.swift */; };
+		7AFBBD801D13092E00AE84B0 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFBBD7F1D13092E00AE84B0 /* Compression.swift */; };
+		7AFBBD821D130A7500AE84B0 /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFBBD811D130A7500AE84B0 /* libcompression.tbd */; };
 		F32A71D81D059F1A009D7214 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A71D71D059F1A009D7214 /* ProfileViewController.swift */; };
-		F39B59451D118B48005C8419 /* BufferManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B59441D118B48005C8419 /* BufferManager.swift */; };
 		F39B595A1D118B68005C8419 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B59471D118B68005C8419 /* SocketAckEmitter.swift */; };
 		F39B595B1D118B68005C8419 /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B59481D118B68005C8419 /* SocketAckManager.swift */; };
 		F39B595C1D118B68005C8419 /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B59491D118B68005C8419 /* SocketAnyEvent.swift */; };
@@ -118,8 +119,9 @@
 		7AA552F21D006C5C002834CE /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		7ABC71AA1D01AC830063E9C2 /* UsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		7AD33BB71CFDE332004258CE /* BridgeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
+		7AFBBD7F1D13092E00AE84B0 /* Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = ../Compression.swift; sourceTree = "<group>"; };
+		7AFBBD811D130A7500AE84B0 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
 		F32A71D71D059F1A009D7214 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		F39B59441D118B48005C8419 /* BufferManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferManager.swift; sourceTree = "<group>"; };
 		F39B59471D118B68005C8419 /* SocketAckEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckEmitter.swift; sourceTree = "<group>"; };
 		F39B59481D118B68005C8419 /* SocketAckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckManager.swift; sourceTree = "<group>"; };
 		F39B59491D118B68005C8419 /* SocketAnyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAnyEvent.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AFBBD821D130A7500AE84B0 /* libcompression.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +231,7 @@
 		7A7AC82B1CFDD4CE006F5E4C = {
 			isa = PBXGroup;
 			children = (
+				7AFBBD811D130A7500AE84B0 /* libcompression.tbd */,
 				7A7AC8361CFDD4CF006F5E4C /* spitchy */,
 				7A7AC84B1CFDD4CF006F5E4C /* spitchyTests */,
 				7A7AC8561CFDD4CF006F5E4C /* spitchyUITests */,
@@ -248,6 +252,7 @@
 		7A7AC8361CFDD4CF006F5E4C /* spitchy */ = {
 			isa = PBXGroup;
 			children = (
+				7AFBBD7F1D13092E00AE84B0 /* Compression.swift */,
 				F39B59461D118B68005C8419 /* SocketIOClientSwift */,
 				7A7AC8371CFDD4CF006F5E4C /* AppDelegate.swift */,
 				7A7AC8391CFDD4CF006F5E4C /* ViewController.swift */,
@@ -307,7 +312,6 @@
 				7A4D751F1D09B2BC00C5D369 /* Camera */,
 				7A4D751E1D09B2AF00C5D369 /* Profile */,
 				7A4D751D1D09B29B00C5D369 /* ListLives */,
-				F39B59441D118B48005C8419 /* BufferManager.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -509,6 +513,7 @@
 				7A78914A1D04A4AC00D719D8 /* Session.swift in Sources */,
 				7AA552F11D006A46002834CE /* Design.swift in Sources */,
 				7A78914E1D04A50800D719D8 /* CameraViewController.swift in Sources */,
+				7AFBBD801D13092E00AE84B0 /* Compression.swift in Sources */,
 				F39B59651D118B68005C8419 /* SocketIOClientStatus.swift in Sources */,
 				F39B59601D118B68005C8419 /* SocketEngineSpec.swift in Sources */,
 				7A0FE7251D0224E900A7B2EA /* LivesViewController.swift in Sources */,
@@ -517,7 +522,6 @@
 				F39B59681D118B68005C8419 /* SocketParser.swift in Sources */,
 				7A85AEAD1D02FE1000FACB6C /* TopicModel.swift in Sources */,
 				F39B59671D118B68005C8419 /* SocketPacket.swift in Sources */,
-				F39B59451D118B48005C8419 /* BufferManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
