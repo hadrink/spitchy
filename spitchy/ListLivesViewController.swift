@@ -27,6 +27,7 @@ class ListLivesViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        
         initFakeData()
         socket = SocketIOClient(socketURL: "vps224869.ovh.net:3005")
         
@@ -37,10 +38,38 @@ class ListLivesViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print(thisTopic)
+        navBar.topItem?.title = thisTopic
+    }
+    
     func design(){
         collectionView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        navBar.topItem?.title = thisTopic
         self.mainBackground.image = lives[0].image
+        blurImage(mainBackground)
+    }
+    
+    func blurImage(image: UIImageView) {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = image.bounds
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        image.addSubview(blurEffectView)
+    }
+    
+    func changeBackgroundWithFade(imageView: UIImageView, newImage: UIImage, animationDuration: NSTimeInterval = 2) {
+        
+        let transition = CATransition()
+        imageView.layer.addAnimation(transition, forKey: kCATransition)
+        transition.type = kCATransitionFade
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.duration = animationDuration
+        print(transition.startProgress)
+        print(transition.endProgress)
+
+        
+        imageView.image = newImage
+        
     }
     
     func initFakeData(){
@@ -59,16 +88,25 @@ class ListLivesViewController: UIViewController {
     
     func livePreview(indexPath: NSIndexPath, cell: ListLiveCell) {
         
-        if let liveToPreview = lives[indexPath.row].liveID {
-            socket?.on(liveToPreview) { data, ack in
-                if let buffer = data[0] as? NSData {
-                    let imageUncompressed = buffer.uncompressedDataUsingCompression(Compression.LZMA)
-                    cell.image.image = UIImage(data: imageUncompressed!)
-                }
+        guard let liveToPreview = lives[indexPath.row].liveID else {
+            print("Lives at \(indexPath.row) doesn't contain a liveID ")
+            return
+        }
+            
+        socket?.on(liveToPreview) { data, ack in
+            if let buffer = data[0] as? NSData {
+                let imageUncompressed = buffer.uncompressedDataUsingCompression(Compression.LZMA)
+                cell.image.image = UIImage(data: imageUncompressed!)
             }
         }
     }
+        
+    @IBAction func goBackAction(sender: AnyObject) {
+        bridgeController.goToPreviousVC()
+    }
+
 }
+        
 
 extension ListLivesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -78,8 +116,9 @@ extension ListLivesViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : ListLiveCell = collectionView.dequeueReusableCellWithReuseIdentifier("liveCell", forIndexPath: indexPath) as! ListLiveCell
         
+        cell.designCell()
         cell.username.text  = lives[indexPath.row].username
-        cell.nbViewers.text = lives[indexPath.row].nbUsers
+        cell.nbViewers.text = lives[indexPath.row].nbUsers! + " viewers"
         cell.image.image    = lives[indexPath.row].image
         
         return cell
@@ -94,18 +133,34 @@ extension ListLivesViewController: UICollectionViewDataSource, UICollectionViewD
                 closestCell = cell
             }
         }
-        let indexPath = collectionView.indexPathForCell(closestCell)
         
-        if(indexPath!.row > 0){
+        guard let indexPath = collectionView.indexPathForCell(closestCell) else {
+            print("No indexPath for closetCell.")
+            return
+        }
+        
+        if(indexPath.row > 0){
             collectionView.contentInset.top = 0
         }
         else {
             collectionView.contentInset.top = 40
         }
         
-        collectionView.scrollToItemAtIndexPath(indexPath!, atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
+        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
         
-        livePreview(indexPath!, cell: closestCell)
+        guard let newBackgroundImage = lives[indexPath.row].image else {
+            print("No background image in lives at indexPath.")
+            return
+        }
+        
+        dispatch_async(dispatch_get_main_queue(),{
+            
+            self.changeBackgroundWithFade(self.mainBackground, newImage: newBackgroundImage)
+    
+        })
+        
+        livePreview(indexPath, cell: closestCell)
     }
+    
     
 }

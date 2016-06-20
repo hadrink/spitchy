@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProfileViewController: UITableViewController {
+class ProfileViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     let colors = Colors()
 
@@ -72,5 +72,18 @@ class ProfileViewController: UITableViewController {
         //-- TableView
         tableView.tableFooterView = UIView()    //-- No display cell empty
         tableView.bounces = false
+    }
+    
+    //-- Avoid Bounce effect
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let panGesture:UIPanGestureRecognizer = gestureRecognizer as! UIPanGestureRecognizer
+        let velocity = panGesture.velocityInView(view)
+        
+        if velocity.x > 0 {
+            return true
+        } else {
+            return false
+        }
+        
     }
 }

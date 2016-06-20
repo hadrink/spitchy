@@ -11,16 +11,18 @@ import UIKit
 //-- Const to load BridgeController
 let bridgeController = BridgeController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
 
-class BridgeController: UIPageViewController, UIScrollViewDelegate {
+class BridgeController: UIPageViewController, UIScrollViewDelegate, UINavigationControllerDelegate {
     
     //-- Declare VC
     let CameraVC: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CameraView")
     let ProfileVC: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProfileView")
     let TopicVC: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TopicView")
-    
+    let ListLives: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ListLivesView")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.delegate = self
         
         //-- Change global background color
         view.backgroundColor = UIColor.whiteColor()
@@ -41,7 +43,10 @@ class BridgeController: UIPageViewController, UIScrollViewDelegate {
     func goToPreviousVC() {
         let previousVC = pageViewController(self, viewControllerBeforeViewController: viewControllers![0] )!
         setViewControllers([previousVC], direction: .Reverse, animated: true, completion: nil)
-        
+    }
+    
+    func goToLivesView() {
+        setViewControllers([ListLives], direction: .Forward, animated: true, completion: nil)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -68,8 +73,10 @@ extension BridgeController: UIPageViewControllerDataSource {
             return nil
         case TopicVC:
             return CameraVC
+        case ListLives:
+            return TopicVC
         default:
-            return CameraVC
+            return nil
         }
     }
     
@@ -80,7 +87,7 @@ extension BridgeController: UIPageViewControllerDataSource {
         case ProfileVC:
             return CameraVC
         default:
-            return CameraVC
+            return nil
         }
     }
 }

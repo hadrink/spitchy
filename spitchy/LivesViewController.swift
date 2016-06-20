@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LivesViewController: UIViewController {
+class LivesViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     var fakeSpitchers: [Dictionary<String, String>] = [
@@ -56,6 +56,10 @@ class LivesViewController: UIViewController {
         design()
         initFakeSpitchers()
         initFakeTopics()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     func initFakeSpitchers() {
@@ -155,10 +159,27 @@ extension LivesViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        bridgeController.goToLivesView()
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+        valueToPass = currentCell.textLabel!.text
+        
+        // initialize new view controller and cast it as your view controller
+        let listLivesViewController = bridgeController.ListLives as! ListLivesViewController
+        // your new view controller should have property that will store passed value
+        listLivesViewController.thisTopic = valueToPass
+
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        
+      
+      
+        
         let indexPath = self.tableView.indexPathForSelectedRow!
         
         if (segue.identifier == "goToListLives") {
+            
             let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
             valueToPass = currentCell.textLabel!.text
             
@@ -166,6 +187,19 @@ extension LivesViewController: UITableViewDataSource, UITableViewDelegate {
             let listLivesViewController = segue.destinationViewController as! ListLivesViewController
             // your new view controller should have property that will store passed value
             listLivesViewController.thisTopic = valueToPass
+        }
+        
+    }
+    
+    //-- Avoid Bounce effect
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let panGesture:UIPanGestureRecognizer = gestureRecognizer as! UIPanGestureRecognizer
+        let velocity = panGesture.velocityInView(view)
+        
+        if velocity.x < 0 {
+            return true
+        } else {
+            return false
         }
         
     }

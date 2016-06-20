@@ -24,8 +24,6 @@ class CameraViewController: UIViewController {
     ]
     
     var fakePreview: FakePreview?
-    @IBOutlet var fakeView: UIView!
-    
     var hashtags = [HashtagModel]()
     var timer: NSTimer?
     
@@ -41,7 +39,6 @@ class CameraViewController: UIViewController {
     @IBOutlet var waveViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var waveViewBottomConstraint: NSLayoutConstraint!
     
-    @IBOutlet var imageTest: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         session = Session()
@@ -59,11 +56,6 @@ class CameraViewController: UIViewController {
         let fakeSize = CGSize(width: 200, height: 600)
         fakePreview?.createFakePreview(fakeSize)
         let previewFake = fakePreview!.preview
-        
-
-        
-        fakeView.layer.addSublayer(previewFake!)
-        imageTest.image = fakePreview?.image
         
         initFakeHashtags()
         design()
@@ -166,8 +158,7 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func hashtagButton(sender: UIButton) {
-        //bridgeController.goToNextVC()
-        imageTest.image = fakePreview?.image
+        bridgeController.goToNextVC()
     }
     
     @IBAction func profileButton(sender: UIButton) {
