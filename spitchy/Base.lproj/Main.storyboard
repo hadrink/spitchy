@@ -1129,13 +1129,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="8" width="110" height="21"/>
+                                                        <rect key="frame" x="0.0" y="91" width="110" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MEH-K8-qbe">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="18" y="32" width="75" height="75"/>
+                                                        <rect key="frame" x="18" y="13" width="75" height="75"/>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
@@ -1412,10 +1412,10 @@
                                 <items>
                                     <navigationItem title="Title" id="wGt-ex-fbu">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="hEU-ao-lnU">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tGS-uh-eF9">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tGS-uh-eF9">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="#"/>
                                                 <connections>
                                                     <action selector="goBackAction:" destination="UWk-xc-zOG" eventType="touchUpInside" id="OLo-uB-Rry"/>
                                                 </connections>
@@ -1675,6 +1675,7 @@
                     <navigationItem key="navigationItem" id="72F-Vk-IZW"/>
                     <connections>
                         <outlet property="collectionView" destination="yeg-bZ-KDD" id="HYU-aj-BQh"/>
+                        <outlet property="goBackToTopicButton" destination="tGS-uh-eF9" id="XfT-tY-izs"/>
                         <outlet property="mainBackground" destination="yp9-yt-QXm" id="3rw-yh-qZV"/>
                         <outlet property="navBar" destination="1Mv-F2-16i" id="iTj-Zp-5o8"/>
                     </connections>

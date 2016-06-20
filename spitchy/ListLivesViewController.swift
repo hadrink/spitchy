@@ -15,7 +15,10 @@ class ListLivesViewController: UIViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet weak var mainBackground: UIImageView!
+    @IBOutlet var goBackToTopicButton: UIButton!
     
+    
+    let colors = Colors()
     var lives = [ListLiveModel]()
     var socket: SocketIOClient?
     
@@ -47,6 +50,11 @@ class ListLivesViewController: UIViewController {
         collectionView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         self.mainBackground.image = lives[0].image
         blurImage(mainBackground)
+        
+        //-- Topic button
+        goBackToTopicButton.titleLabel?.font = UIFont(name: "BPreplay-Italic", size: 24)
+        goBackToTopicButton.titleLabel?.textColor = colors.white
+        goBackToTopicButton.tintColor = colors.white
     }
     
     func blurImage(image: UIImageView) {
