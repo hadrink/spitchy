@@ -44,7 +44,6 @@ class UsernameViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func goAction(sender: UIButton) {
-        //let bridgeController = BridgeController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         self.presentViewController(bridgeController, animated: true, completion: nil)
     }
     

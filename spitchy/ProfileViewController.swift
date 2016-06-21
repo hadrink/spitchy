@@ -86,4 +86,25 @@ class ProfileViewController: UITableViewController, UIGestureRecognizerDelegate 
         }
         
     }
+    
+    override func tableView(tableView: UITableView,
+                            didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        print("Jeambon")
+        print(indexPath.row)
+        print(indexPath.section)
+        if indexPath.row == 2 && indexPath.section == 1 {
+            
+            //here you can enter the action you want to start when cell 1 is clicked
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("FollowingsViewController")
+            navigationController?.pushViewController(vc, animated: true)
+            
+            print("Youhou")
+            
+        }
+        
+    }
 }

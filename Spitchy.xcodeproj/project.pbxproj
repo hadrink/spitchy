@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7A0FE7251D0224E900A7B2EA /* LivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */; };
+		7A1D2EC81D06F728009FD5E7 /* FollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D2EC71D06F728009FD5E7 /* FollowingsViewController.swift */; };
+		7A1D2ECA1D0707E4009FD5E7 /* FollowingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D2EC91D0707E4009FD5E7 /* FollowingsCellModel.swift */; };
+		7A1D2ECC1D0707FA009FD5E7 /* FollowingsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D2ECB1D0707FA009FD5E7 /* FollowingsCustomCell.swift */; };
 		7A4D75231D09F6C400C5D369 /* ListLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D75221D09F6C400C5D369 /* ListLiveModel.swift */; };
 		7A7891481D04A44B00D719D8 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7891471D04A44B00D719D8 /* Preview.swift */; };
 		7A78914A1D04A4AC00D719D8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7891491D04A4AC00D719D8 /* Session.swift */; };
@@ -83,6 +86,9 @@
 
 /* Begin PBXFileReference section */
 		7A0FE7241D0224E900A7B2EA /* LivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesViewController.swift; sourceTree = "<group>"; };
+		7A1D2EC71D06F728009FD5E7 /* FollowingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingsViewController.swift; sourceTree = "<group>"; };
+		7A1D2EC91D0707E4009FD5E7 /* FollowingsCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingsCellModel.swift; sourceTree = "<group>"; };
+		7A1D2ECB1D0707FA009FD5E7 /* FollowingsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingsCustomCell.swift; sourceTree = "<group>"; };
 		7A4D75221D09F6C400C5D369 /* ListLiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLiveModel.swift; sourceTree = "<group>"; };
 		7A7891471D04A44B00D719D8 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		7A7891491D04A4AC00D719D8 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -192,6 +198,9 @@
 		7A4D751E1D09B2AF00C5D369 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				7A1D2EC71D06F728009FD5E7 /* FollowingsViewController.swift */,
+				7A1D2EC91D0707E4009FD5E7 /* FollowingsCellModel.swift */,
+				7A1D2ECB1D0707FA009FD5E7 /* FollowingsCustomCell.swift */,
 				F32A71D71D059F1A009D7214 /* ProfileViewController.swift */,
 			);
 			name = Profile;
@@ -200,8 +209,8 @@
 		7A4D751F1D09B2BC00C5D369 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				7A78914D1D04A50800D719D8 /* CameraViewController.swift */,
 				7A7891511D04BF9C00D719D8 /* HashtagModel.swift */,
+				7A78914D1D04A50800D719D8 /* CameraViewController.swift */,
 				7A78914B1D04A4D300D719D8 /* DeviceSettings.swift */,
 				7A7891491D04A4AC00D719D8 /* Session.swift */,
 				7A7891471D04A44B00D719D8 /* Preview.swift */,
@@ -502,6 +511,8 @@
 				F39B596A1D118B68005C8419 /* SocketTypes.swift in Sources */,
 				7A85AEA51D02DFC900FACB6C /* SpitchersCollectionCell.swift in Sources */,
 				F39B59631D118B68005C8419 /* SocketIOClient.swift in Sources */,
+				7A1D2ECA1D0707E4009FD5E7 /* FollowingsCellModel.swift in Sources */,
+				7A1D2ECC1D0707FA009FD5E7 /* FollowingsCustomCell.swift in Sources */,
 				7A7891521D04BF9C00D719D8 /* HashtagModel.swift in Sources */,
 				F39B595D1D118B68005C8419 /* SocketEngine.swift in Sources */,
 				7ABC71AB1D01AC830063E9C2 /* UsernameViewController.swift in Sources */,
@@ -522,6 +533,7 @@
 				F39B59681D118B68005C8419 /* SocketParser.swift in Sources */,
 				7A85AEAD1D02FE1000FACB6C /* TopicModel.swift in Sources */,
 				F39B59671D118B68005C8419 /* SocketPacket.swift in Sources */,
+				7A1D2EC81D06F728009FD5E7 /* FollowingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
