@@ -151,7 +151,7 @@ class Session: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAu
                 let imageCompress = compressed!.compressedDataUsingCompression(Compression.LZMA)
                 
                 
-                socket?.emit("buffer_to_server", imageCompress!)
+                //socket?.emit("buffer_to_server", imageCompress!)
                 
                 
             }

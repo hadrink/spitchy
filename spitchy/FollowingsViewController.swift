@@ -31,6 +31,8 @@ class FollowingsViewController: UIViewController {
     @IBOutlet var navBar: UINavigationBar!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var closeButton: UIButton!
+    @IBOutlet var borderTopCloseButton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,9 @@ class FollowingsViewController: UIViewController {
     }
     
     func design() {
+        
+        //-- Main
+        self.view.backgroundColor = colors.green
         
         //-- Status bar
         backgroundStatusBar.backgroundColor = colors.green
@@ -108,7 +113,24 @@ class FollowingsViewController: UIViewController {
         tableView.rowHeight = 60
         tableView.separatorColor = colors.lightGreen
         
+        //-- Close button
+        closeButton.backgroundColor = colors.blue
+        closeButton.tintColor = colors.white
+        closeButton.titleLabel?.font = UIFont(name: "Lato-Regular", size: 14)
+        closeButton.titleLabel?.text = "Fermer"
+        closeButton.layer.cornerRadius = 4.0
+        
+        //-- Border Top Close Button
+        borderTopCloseButton.backgroundColor = UIColor.blackColor()
+        
     }
+    
+    
+    @IBAction func closeButtonAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
 }
 
 extension FollowingsViewController: UITableViewDelegate, UITableViewDataSource {

@@ -26,6 +26,7 @@ class CameraViewController: UIViewController {
     var fakePreview: FakePreview?
     var hashtags = [HashtagModel]()
     var timer: NSTimer?
+    var tap: UITapGestureRecognizer?
     
     @IBOutlet var previewLayer: UIView!
     @IBOutlet var tableView: UITableView!
@@ -63,11 +64,16 @@ class CameraViewController: UIViewController {
         tableView.reloadData()
         self.waveViewBottomConstraint.constant = 40
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(CameraViewController.animate), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(self.animate), userInfo: nil, repeats: true)
+        
+        //-- Keyboard event
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
+        
+        initTapGesture()
         
     }
-    
-    
     
     func animate() {
         self.waveViewBottomConstraint.constant = 25
@@ -134,6 +140,8 @@ class CameraViewController: UIViewController {
         customTopicInput.attributedPlaceholder = NSAttributedString(string: "Ton hashtag perso", attributes: customTopicInputAttributesPlaceholder)
         customTopicInput.attributedText = NSAttributedString(string: "", attributes: customTopicInputAttributesText)
         
+        customTopicInput.textColor = colors.white
+        
         //-- TableView
         tableView.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
         tableView.separatorStyle = .None
@@ -179,11 +187,46 @@ extension CameraViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.selectionStyle = .None
         cell.textLabel?.font = UIFont(name: "Lato-Italic", size: 18)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fakeHashtags.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        cell.textLabel?.font = UIFont(name: "Lato-BoldItalic", size: 18)
+        
+        customTopicInput.text = hashtags[indexPath.row].hashtag
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        cell.textLabel?.font = UIFont(name: "Lato-Italic", size: 18)
+    }
+    
+}
+
+extension CameraViewController: UIGestureRecognizerDelegate {
+    
+    //-- Tap gesture
+    func initTapGesture() {
+        tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap!.delegate = self
+    }
+    
+    func dismissKeyboard() {
+        customTopicInput.endEditing(true)
+    }
+    
+    func keyboardWillShow(sender: NSNotification){
+        self.view.addGestureRecognizer(tap!)
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.removeGestureRecognizer(tap!)
     }
 }
 

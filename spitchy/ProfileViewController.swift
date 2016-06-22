@@ -17,6 +17,7 @@ class ProfileViewController: UITableViewController, UIGestureRecognizerDelegate 
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileBackground: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     
     @IBOutlet weak var followBackground: UIView!
     @IBOutlet weak var followLabel: UILabel!
@@ -72,6 +73,10 @@ class ProfileViewController: UITableViewController, UIGestureRecognizerDelegate 
         //-- TableView
         tableView.tableFooterView = UIView()    //-- No display cell empty
         tableView.bounces = false
+        
+        //-- UsernameLabel + NameLabel
+        usernameLabel.font = UIFont(name: "Lato-Regular", size: 14)
+        nameLabel.font = UIFont(name: "Lato-Light", size: 14)
     }
     
     //-- Avoid Bounce effect
