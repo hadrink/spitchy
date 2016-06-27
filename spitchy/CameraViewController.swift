@@ -26,7 +26,13 @@ class CameraViewController: UIViewController {
     var fakePreview: FakePreview?
     var hashtags = [HashtagModel]()
     var timer: NSTimer?
-    var tap: UITapGestureRecognizer?
+    var timerButtonsGoToBottom: NSTimer?
+    var timerCountDown: NSTimer?
+    var counter: Int?
+    var tapForKeyboard: UITapGestureRecognizer?
+    var tapForButtonsGoBack: UITapGestureRecognizer?
+    var liveStarted: Bool?
+    var nbViewers: UILabel?
     
     @IBOutlet var previewLayer: UIView!
     @IBOutlet var tableView: UITableView!
@@ -39,6 +45,10 @@ class CameraViewController: UIViewController {
     @IBOutlet var waveViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet var waveViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var waveViewBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var profileButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var topicButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var liveButtonBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,10 +82,12 @@ class CameraViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
         
         initTapGesture()
+        initButtonsGoBackOnTap()
         
     }
     
     func animate() {
+        
         self.waveViewBottomConstraint.constant = 25
         self.waveViewHeightConstraint.constant = 100
         self.waveViewWidthConstraint.constant = 100
@@ -95,7 +107,6 @@ class CameraViewController: UIViewController {
             
             
             }, completion: { (finished: Bool) -> Void in
-                
                 self.waveView.layer.opacity = 0.6
                 self.waveViewBottomConstraint.constant = 40
                 self.waveViewHeightConstraint.constant = 70
@@ -103,6 +114,140 @@ class CameraViewController: UIViewController {
                 self.waveView.layer.cornerRadius = 35
                 self.view.layoutIfNeeded()
         })
+    }
+    
+    func startLive() -> Bool {
+        
+        self.view.addGestureRecognizer(tapForButtonsGoBack!)
+        
+        buttonsGoToBottom()
+        
+        return true
+    }
+    
+    func stopLive() -> Bool {
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(self.animate), userInfo: nil, repeats: true)
+        self.waveView.alpha = 1
+        
+        self.view.removeGestureRecognizer(tapForButtonsGoBack!)
+        
+        self.profileButtonBottomConstraint.constant = 40
+        self.topicButtonBottomConstraint.constant = 40
+        self.liveButtonBottomConstraint.constant = 40
+        
+        timerButtonsGoToBottom?.invalidate()
+        timerButtonsGoToBottom = nil
+        //})
+        
+        return false
+    }
+    
+    @IBAction func startLiveAction(sender: AnyObject) {
+        
+        counter = 3
+        
+        if liveStarted == false || liveStarted == nil {
+            timer?.invalidate()
+            timer = nil
+            timerCountDown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.countDown), userInfo: nil, repeats:
+            true)
+        } else {
+            liveStarted = stopLive()
+            
+            
+            UIView.transitionWithView(liveButton, duration: 0.5, options: .TransitionCrossDissolve, animations: {
+                self.liveButton.setImage(UIImage(named: "logo-live-icon"), forState: .Normal)
+                self.liveButton.setTitle("", forState: .Normal)
+            }, completion: nil)
+            
+            UIView.transitionWithView(spitchy, duration: 1, options: .TransitionCrossDissolve, animations: {
+                self.spitchy.text = "Spitchy"
+                self.spitchy.font = UIFont(name: "BPreplay-BoldItalic", size: 24)
+                }, completion: nil)
+            
+            UIView.animateWithDuration(1, animations: {
+                self.liveButton.backgroundColor = self.colors.blue
+                self.tableView.alpha = 1
+                self.nbViewers?.alpha = 0
+                self.customTopicInput.alpha = 1
+                }, completion: { finished in
+                    self.nbViewers?.removeFromSuperview()
+            })
+            
+            print("Live stoped")
+        }
+        
+        
+    }
+    
+    func countDown() {
+        
+        nbViewers = createNbViewersLabel()
+        self.nbViewers?.alpha = 0
+        
+        
+        UIView.transitionWithView(liveButton, duration: 0.25, options: .TransitionCrossDissolve, animations: {
+            self.liveButton.setImage(nil, forState: .Normal)
+            self.liveButton.setTitle(String(self.counter!), forState: .Normal)
+            }, completion: nil)
+        
+        print(counter)
+        
+        if counter == 0 {
+            self.waveView.alpha = 0
+            timerCountDown?.invalidate()
+            
+            
+            UIView.transitionWithView(liveButton, duration: 0.25, options: .TransitionCrossDissolve, animations: {
+                self.liveButton.setTitle("", forState: .Normal)
+                self.liveButton.setImage(UIImage(named: "logo-live-icon"), forState: .Normal)
+                }, completion: nil)
+            
+            UIView.transitionWithView(spitchy, duration: 1, options: .TransitionCrossDissolve, animations: {
+                self.spitchy.text = self.customTopicInput.text
+                self.spitchy.font = UIFont(name: "Lato-Light", size: 24)
+                }, completion: nil)
+            
+
+            
+            UIView.animateWithDuration(1, animations: {
+                self.liveButton.backgroundColor = self.colors.red
+                self.nbViewers?.alpha = 1
+                self.tableView.alpha = 0
+                self.customTopicInput.alpha = 0
+                }, completion: { finished in
+                
+            })
+            
+            timerCountDown = nil
+            liveStarted = startLive()
+            
+            print("Live started")
+            
+        }
+        
+        counter! -= 1
+    }
+    
+    func createNbViewersLabel(text: String = "0 viewers") -> UILabel? {
+        let label: UILabel = UILabel(frame: CGRect(x: 0, y: 60, width: 250, height: 40))
+        label.font = UIFont(name: "Lato-Regular", size: 14)
+        label.textColor = colors.white
+        label.text = text
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .Center
+        let constraint = NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: label, attribute: .Width, relatedBy: .Equal, toItem: .None, attribute: .NotAnAttribute, multiplier: 1, constant: 250)
+        let top = NSLayoutConstraint(item: label, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 60)
+        
+        self.view.addSubview(label)
+        self.view.addConstraint(constraint)
+        self.view.addConstraint(width)
+        self.view.addConstraint(top)
+        self.view.layoutIfNeeded()
+        
+        return label
     }
     
     func initFakeHashtags(){
@@ -116,6 +261,7 @@ class CameraViewController: UIViewController {
         //-- Spitchy
         spitchy.font = UIFont(name: "BPreplay-BoldItalic", size: 24)
         spitchy.textColor = colors.white
+        spitchy.text = "Spitchy"
         
         for family in UIFont.familyNames() {
             //print(family)
@@ -151,6 +297,8 @@ class CameraViewController: UIViewController {
         liveButton.layer.backgroundColor = colors.blue.CGColor
         liveButton.layer.opacity = 1
         liveButton.layer.cornerRadius = liveButton.layer.frame.width / 2
+        liveButton.backgroundColor = colors.blue
+        liveButton.titleLabel?.font = UIFont(name: "Lato-Bold", size: 24)
 
         //-- Topic button
         topicButton.titleLabel?.font = UIFont(name: "BPreplay-Italic", size: 36)
@@ -213,8 +361,8 @@ extension CameraViewController: UIGestureRecognizerDelegate {
     
     //-- Tap gesture
     func initTapGesture() {
-        tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        tap!.delegate = self
+        tapForKeyboard = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tapForKeyboard!.delegate = self
     }
     
     func dismissKeyboard() {
@@ -222,11 +370,51 @@ extension CameraViewController: UIGestureRecognizerDelegate {
     }
     
     func keyboardWillShow(sender: NSNotification){
-        self.view.addGestureRecognizer(tap!)
+        self.view.addGestureRecognizer(tapForKeyboard!)
     }
     
     func keyboardWillHide(sender: NSNotification) {
-        self.view.removeGestureRecognizer(tap!)
+        self.view.removeGestureRecognizer(tapForKeyboard!)
+    }
+    
+    func initButtonsGoBackOnTap() {
+        tapForButtonsGoBack = UITapGestureRecognizer(target: self, action: #selector(self.buttonsComeBackOnTap))
+    }
+    
+    func buttonsComeBackOnTap() {
+        
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.profileButtonBottomConstraint.constant = 40
+            self.topicButtonBottomConstraint.constant = 40
+            self.liveButtonBottomConstraint.constant = 40
+            
+            self.view.layoutIfNeeded()
+        })
+        
+        timerButtonsGoToBottom?.invalidate()
+        timerButtonsGoToBottom = nil
+        
+        timerButtonsGoToBottom = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(self.buttonsGoToBottom), userInfo: nil, repeats: false)
+        
+    }
+    
+    func buttonsGoToBottom() {
+        
+        
+        UIView.animateWithDuration(0.5, delay: 1.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            
+            self.profileButtonBottomConstraint.constant = -100
+            self.topicButtonBottomConstraint.constant = -100
+            self.liveButtonBottomConstraint.constant = -100
+            self.view.layoutIfNeeded()
+            
+            }, completion: { finished in
+                
+        })
+        
+    
+        
     }
 }
 

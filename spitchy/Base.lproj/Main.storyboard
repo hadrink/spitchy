@@ -1109,12 +1109,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spitchy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szc-A9-tRK">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5h-xn-VGb">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" image="return-camera-icon"/>
@@ -1164,6 +1158,9 @@
                                                 <include reference="qQ0-Eg-TaJ"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="startLiveAction:" destination="bpD-7a-YEe" eventType="touchUpInside" id="l5h-Wo-7gl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-Ww-g9t">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1196,6 +1193,25 @@
                                             <action selector="profileButton:" destination="bpD-7a-YEe" eventType="touchUpInside" id="gsQ-7T-dHp"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spitchy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szc-A9-tRK">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="9dv-cH-aO0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9dv-cH-aO0"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="9dv-cH-aO0"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1224,12 +1240,12 @@
                                     <mask key="subviews">
                                         <exclude reference="1lW-Fr-MVx"/>
                                         <exclude reference="c4D-us-yxc"/>
-                                        <exclude reference="szc-A9-tRK"/>
                                         <exclude reference="y5h-xn-VGb"/>
                                         <exclude reference="spi-md-DJr"/>
                                         <exclude reference="xb4-wO-Flk"/>
                                         <exclude reference="Vc4-Ww-g9t"/>
                                         <exclude reference="Gmg-xq-dEI"/>
+                                        <exclude reference="szc-A9-tRK"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="1Cr-yR-tO6"/>
@@ -1256,12 +1272,12 @@
                                     <mask key="subviews">
                                         <include reference="1lW-Fr-MVx"/>
                                         <include reference="c4D-us-yxc"/>
-                                        <include reference="szc-A9-tRK"/>
                                         <include reference="y5h-xn-VGb"/>
                                         <include reference="spi-md-DJr"/>
                                         <include reference="xb4-wO-Flk"/>
                                         <include reference="Vc4-Ww-g9t"/>
                                         <include reference="Gmg-xq-dEI"/>
+                                        <include reference="szc-A9-tRK"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="1Cr-yR-tO6"/>
@@ -1319,10 +1335,13 @@
                     <connections>
                         <outlet property="customTopicInput" destination="c4D-us-yxc" id="D63-A6-IGu"/>
                         <outlet property="liveButton" destination="xb4-wO-Flk" id="ZWZ-1E-QQQ"/>
+                        <outlet property="liveButtonBottomConstraint" destination="94x-8z-Xmw" id="a74-bV-LEL"/>
                         <outlet property="previewLayer" destination="FHz-f0-nYS" id="NJ9-yh-Us9"/>
+                        <outlet property="profileButtonBottomConstraint" destination="j3R-S2-ecx" id="cQg-Ah-huh"/>
                         <outlet property="spitchy" destination="szc-A9-tRK" id="J9W-kC-i2L"/>
                         <outlet property="tableView" destination="1lW-Fr-MVx" id="cxk-qW-zRH"/>
                         <outlet property="topicButton" destination="Vc4-Ww-g9t" id="kjm-Vr-635"/>
+                        <outlet property="topicButtonBottomConstraint" destination="I1t-rf-5pP" id="5Qb-bg-9YZ"/>
                         <outlet property="waveView" destination="spi-md-DJr" id="34l-o8-6ik"/>
                         <outlet property="waveViewBottomConstraint" destination="zQR-SN-oS5" id="B3V-1Y-hMz"/>
                         <outlet property="waveViewHeightConstraint" destination="rMc-h8-akA" id="Yag-fi-d5j"/>

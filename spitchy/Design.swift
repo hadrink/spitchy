@@ -24,4 +24,5 @@ struct Colors {
     let white = Design().UIColorFromRGB(0xFFFFFF)
     let lightGreen = Design().UIColorFromRGB(0xE9F1E0)
     let blue = Design().UIColorFromRGB(0x40A1BD)
+    let red = Design().UIColorFromRGB(0xEF3B5D)
 }
